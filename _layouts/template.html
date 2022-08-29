@@ -33,68 +33,41 @@
 
 
 <section>
-<div class="area"></div><nav class="main-menu">
-  <ul>
-      <li class="has-subnav">
-          <a href= "1"">
-              <i class="fa fa-home fa-2x"></i>
-              <span class="nav-text">
-                  What is TinyML?
-              </span>
-          </a>
-        
-      </li>
 
-      <li class="has-subnav">
-        <a href="2">
-           <i class="fa fa-list fa-2x"></i>
-            <span class="nav-text">
-                Microcontroller Basics
-            </span>
-        </a>
-        
-    </li>
+	<div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
 
-      <li class="has-subnav">
-          <a href="3">
-             <i class="fa fa-list fa-2x"></i>
-              <span class="nav-text">
-                  Machine Learning Basics
-              </span>
-          </a>
-          
-      </li>
-      <li class="has-subnav">
-          <a href="4">
-             <i class="fa fa-folder-open fa-2x"></i>
-              <span class="nav-text">
-                Python Basics
-              </span>
-          </a>
-         
-      </li>
-      <li>
-          <a href="5">
-              <i class="fa fa-bar-chart-o fa-2x"></i>
-              <span class="nav-text">
-                  TinyML
-              </span>
-          </a>
-      </li>
-  
-  
-  <ul class="logout">
-      <li>
-         <a href="#">
-               <i class="fa fa-power-off fa-2x"></i>
-              <span class="nav-text">
-                  Logout
-              </span>
-          </a>
-      </li>  
-  </ul>
+		<aside class="sidebar">
+			<h3>Menu</h3>
+			
+			<nav class="menu">
+				<a href="1" class="menu-item is-active">Home</a>
+				<a href="2" class="menu-item">About</a>
+				<a href="3" class="menu-item">Portfolio</a>
+				<a href="4" class="menu-item">Contact</a>
+			</nav>
 
-</nav>
+		</aside>
+
+		<main class="content">
+			<h1>Welcome, Human</h1>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, explicabo!</p>
+		</main>
+	</div>
+
+	<script>
+		const menu_toggle = document.querySelector('.menu-toggle');
+		const sidebar = document.querySelector('.sidebar');
+
+		menu_toggle.addEventListener('click', () => {
+			menu_toggle.classList.toggle('is-active');
+			sidebar.classList.toggle('is-active');
+		});
+	</script>
 </section>
 
 </body>
