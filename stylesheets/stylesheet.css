@@ -473,11 +473,14 @@ a {
 .sidebar .menu .menu-item.is-active {
 	color:  #85b5d9;
 
+
 }
 
+/* 
 .sidebar .menu .menu-item:hover {
 	border-right: 5px solid #85b5d9;
 }
+*/
 
 .content {
 	flex: 1 1 0;
@@ -517,7 +520,7 @@ a {
 		transition: 0.2s linear;
 	}
 
-  /*border-right: 5px solid #85b5d9; */
+  /* */
 	.sidebar.is-active {
 		left: 0;
     color:  #85b5d9;
