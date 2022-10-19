@@ -524,10 +524,8 @@ a {
 
 .active { background-color: #85b5d9; }
 /* to override the existing css for "a" tag */
-
-#fixedbar ul li.active a{
-  color: #ff9933;
-}
+#sub-header .active a{   color:  #85b5d9;
+  border-right: 5px solid #85b5d9;}
 
 
 

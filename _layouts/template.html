@@ -31,17 +31,17 @@
 		<aside class="sidebar">
 			<h3>Menu</h3>
 			
-		<div id="fixedbar"></div>
-			<nav class="menu" id="fixednav>
+			<nav class="menu">
+				<div id="sub-header">
 					<ul>
-						<li> <a href="1" class="menu-item">Introduction</a> </li>
-						<li> <a href="2" class="menu-item">Microcontroller Basics</a> </li>
-						<li> <a href="3" class="menu-item">Machine Learning Basics</a> </li>
+						<li> <a href="1" class="menu-item">Introduction </a> </li>
+						<li> <a href="2" class="menu-item">Microcontroller Basics </a> </li>
+						<li> <a href="3" class="menu-item">Machine Learning Basics </a> </li>
 						<li> <a href="4" class="menu-item">Python Basics</a> </li>
 						<li> <a href="4" class="menu-item">Projects</a> </li>
 					</ul>
+				</div>
 			</nav>
-		</div>
 
 		</aside>
 
@@ -59,24 +59,20 @@
 		});
 
 
-		/*
+	
 		$(function(){
     // this will get the full URL at the address bar
     var url = window.location.href; 
+
     // passes on every "a" tag 
     $("#sub-header a").each(function() {
             // checks if its the same on the address bar
         if(url == (this.href)) { 
             $(this).closest("li").addClass("active");
         }
-    	});
-	});
-*/
-
-$('#fixednav ul li a').click(function () {
-    $('#fixednav ul li a').removeClass('active');
-    $(this).addClass('active');
+    });
 });
+
 
 	</script>
 </section>
