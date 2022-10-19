@@ -31,8 +31,9 @@
 		<aside class="sidebar">
 			<h3>Menu</h3>
 			
-			<nav class="menu">
-				<div id="sub-header">
+			<div id="fixedbar"> //sub-header
+				<div class="container">	
+			<nav class="menu" id="fixedbar">
 					<ul>
 						<li> <a href="1" class="menu-item">Introduction </a> </li>
 						<li> <a href="2" class="menu-item">Microcontroller Basics </a> </li>
@@ -40,9 +41,9 @@
 						<li> <a href="4" class="menu-item">Python Basics</a> </li>
 						<li> <a href="4" class="menu-item">Projects</a> </li>
 					</ul>
-				</div>
 			</nav>
-
+		</div>
+	</div>
 		</aside>
 
 		<main class="main-content">
@@ -58,8 +59,12 @@
 			sidebar.classList.toggle('is-active');
 		});
 
+		$('#fixednav ul li a').click(function () {
+    $('#fixednav ul li a').removeClass('active');
+    $(this).addClass('active');
+});
 
-	
+	/*
 		$(function(){
     // this will get the full URL at the address bar
     var url = window.location.href; 
@@ -72,6 +77,8 @@
         }
     });
 });
+*/
+
 
 
 	</script>
