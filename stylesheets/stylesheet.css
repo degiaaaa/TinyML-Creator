@@ -526,8 +526,14 @@ a {
 	.sidebar.is-active {
 		left: 0;
     color:  #85b5d9;
-	
+}
 
+.active {
+  color: #ff9933 !important;
+}
+
+#fixedbar ul li a, #fixedbar ul li a:visited {
+  color: #00f;
 }
 
 
