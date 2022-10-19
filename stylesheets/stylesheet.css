@@ -530,7 +530,8 @@ a {
   border-right: 5px solid #85b5d9;}
 */
 .active {
-  color: #ff9933 !important;
+  color:  #85b5d9 !important;
+  border-right: 5px solid #85b5d9;
 }
 
 #fixedbar ul li a, #fixedbar ul li a:visited {
