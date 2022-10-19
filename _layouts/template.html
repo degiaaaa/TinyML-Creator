@@ -51,13 +51,10 @@
 				<li> <a href="4" class="navitem">Python Basics</a> </li>
 				<li> <a href="4" class="navitem">Projects</a> </li>
 			</ul>
-	</nav>
-
-
-	
-		</div>
-	</div>
-		</aside>
+		</nav>
+			</div>
+				</div>
+					</aside>
 
 		<main class="main-content">
       {{ content }}
@@ -71,12 +68,6 @@
 		menu_toggle.addEventListener('click', () => {
 			menu_toggle.classList.toggle('is-active');
 			sidebar.classList.toggle('is-active');
-		});
-
-
-		$('#fixednav ul li a').click(function () {
-    		$('#fixednav ul li a').removeClass('active');
-   			 $(this).addClass('active');
 		});
 
 
