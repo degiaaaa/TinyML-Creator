@@ -530,6 +530,16 @@ a {
 
 
 
+/* Neeeeu */
+.active {
+  color: #ff9933 !important;
+}
+
+#fixedbar ul li a, #fixedbar ul li a:visited {
+  color: #00f;
+}
+
+
 /* .active { background-color: #85b5d9; }
 /* to override the existing css for "a" tag */
 /*
