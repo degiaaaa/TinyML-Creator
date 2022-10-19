@@ -468,11 +468,11 @@ a {
 	transition: 0.2s linear;
 }
 
-/* #3bba9c  */
+/* #3bba9c   */
 .sidebar .menu .menu-item:hover,
 .sidebar .menu .menu-item.is-active {
 	color:  #85b5d9;
-	border-right: 5px solid #85b5d9;
+
 }
 
 .sidebar .menu .menu-item:hover {
@@ -517,10 +517,11 @@ a {
 		transition: 0.2s linear;
 	}
 
+  /*border-right: 5px solid #85b5d9; */
 	.sidebar.is-active {
 		left: 0;
     color:  #85b5d9;
-	border-right: 5px solid #85b5d9;
+	
 	}
 }
 
