@@ -522,13 +522,14 @@ a {
 	}
 }
 
-/*
+
 .active { background-color: #85b5d9; }
 /* to override the existing css for "a" tag */
-/*
+
 #sub-header .active a{   color:  #85b5d9;
   border-right: 5px solid #85b5d9;}
-*/
+
+  /*
 .active {
   color:  #85b5d9 !important;
   border-right: 5px solid #85b5d9;
@@ -537,7 +538,7 @@ a {
 #fixedbar ul li a, #fixedbar ul li a:visited {
   color: #85b5d9;;
 }
-
+*/
 /*
 
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);
