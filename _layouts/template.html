@@ -53,19 +53,26 @@
 		const menu_toggle = document.querySelector('.menu-toggle');
 		const sidebar = document.querySelector('.sidebar');
 
-		menu_toggle.addEventListener('click', () => {
+		const menuItems = document.querySelectorAll(".menu-item");
+
+		 menu_toggle.addEventListener('click', () => {
 			menu_toggle.classList.toggle('is-active');
 			sidebar.classList.toggle('is-active');
 		});
 
+		menuItems.addEventListener('click', () => {
+			menuItems.classList.add('is-active');
+		});
 
-		var menuItems = document.querySelectorAll(".menu-item");
+		
+	/*
+var menuItems = document.querySelectorAll(".menu-item");
 			for (var i = 0; i < menuItems.length; i++) {
 				menuItems[i].addEventListener("click", function() {
       sidebar.classList.add("is-active");
    });
 }
-	/*
+
 		$(function(){
     // this will get the full URL at the address bar
     var url = window.location.href; 
