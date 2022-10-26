@@ -526,17 +526,7 @@ a {
 	.sidebar.is-active {
 		left: 0;
     color:  #85b5d9;
-}
-
-
-
-/* Neeeeu */
-.active {
-  color: #ff9933 !important;
-}
-
-#fixedbar ul li a, #fixedbar ul li a:visited {
-  color: #00f;
+    border-right: 5px solid #85b5d9;
 }
 
 
