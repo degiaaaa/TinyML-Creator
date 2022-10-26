@@ -489,13 +489,13 @@ a {
 	transition: 0.2s linear;
 }
 
-.sidebar .menu .menu-item:hover,
-.sidebar .menu .menu-item.is-active::after {
+.sidebar .menu .menu-item::after {
 	color:  #85b5d9;
+  border-right: 5px solid #85b5d9;
 }
 
-.sidebar .menu .menu-item:hover, 
-.sidebar .menu .menu-item.is-active::after {
+.sidebar .menu .menu-item:hover {
+  color:  #85b5d9;
 	border-right: 5px solid #85b5d9;
 }
 /*
