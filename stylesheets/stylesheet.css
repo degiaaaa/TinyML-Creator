@@ -460,6 +460,7 @@ a {
 }
 */
 
+/*
 .sidebar .menu {
 	margin: 0 -1rem;
 }
@@ -472,19 +473,15 @@ a {
 	transition: 0.2s linear;
 }
 
-/* #3bba9c   */
 .sidebar .menu .menu-item:hover,
 .sidebar .menu .menu-item.is-active {
 	color:  #85b5d9;
-
-
 }
-
 
 .sidebar .menu .menu-item:hover {
 	border-right: 5px solid #85b5d9;
 }
-
+*/
 
 .content {
 	flex: 1 1 0;
