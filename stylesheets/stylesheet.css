@@ -444,7 +444,7 @@ a {
   transform: rotate(90deg);
 }
 
-
+/*
 .sidebar {
 	flex: 1 1 0;
 	max-width: 300px;
@@ -474,7 +474,7 @@ a {
 }
 
 
-/*
+*/
 .sidebar {
 	flex: 1 1 0;
 	max-width: 300px;
@@ -502,7 +502,7 @@ a {
 .sidebar .menu .menu-item:hover {
 	border-right: 5px solid #85b5d9;
 }
-*/
+
 
 /*
 .sidebar h3 {
