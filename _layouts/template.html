@@ -64,16 +64,6 @@
             sidebar.classList.toggle('is-active');
         });
 
-        const menuItems = document.querySelectorAll('.menu-item');
-
-        menuItems.forEach((menuItem) => {
-            menuItem.addEventListener('click', (event) => {
-                const subMenu = event.target.nextElementSibling;
-                if (subMenu && subMenu.classList.contains('sub-menu')) {
-                    subMenu.classList.toggle('is-active');
-                }
-            });
-        });
 
 
 		$('li . menu-item').click(function(){
