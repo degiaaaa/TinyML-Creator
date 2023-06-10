@@ -444,12 +444,6 @@ a {
   transform: rotate(90deg);
 }
 
-.sidebar {
-	flex: 1 1 0;
-	max-width: 300px;
-	padding: 2rem 1rem;
-	background-color: #2e3047;
-} 
 
 .sidebar .menu .menu-item {
   display: block;
@@ -457,6 +451,7 @@ a {
   color: #FFF;
   text-decoration: none;
   transition: 0.2s linear;
+  background-color: #2e3047;
 }
 
 .sidebar .menu .menu-item:hover {
@@ -470,6 +465,3 @@ a {
   border-right: 5px solid #85b5d9;
 }
 
-.sidebar .menu .menu-item.active {
-  background-color: #2e3047;
-}
