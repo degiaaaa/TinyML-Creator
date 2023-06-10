@@ -75,6 +75,14 @@
             });
         });
 
+
+	$(".menu-item>li").each(function() {
+    var menuItem = $(this);
+    if (menuItem.find("a").attr("href") == location.pathname) {
+		menuItem.addClass("active");
+    }
+});
+
  /*
 		const menu_toggle = document.querySelector('.menu-toggle');
 		const sidebar = document.querySelector('.sidebar');
