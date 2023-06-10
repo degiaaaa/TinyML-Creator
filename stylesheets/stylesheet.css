@@ -211,18 +211,18 @@ a {
 @media screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;
-    padding: 2rem 6rem; 
-    margin: 1rem 0; /* auto*/
+    padding: 2rem 6rem;
+    margin: 0 auto;
     font-size: 1.1rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .main-content {
-    padding: 2rem 4rem; 
+    padding: 2rem 4rem;
     font-size: 1.1rem; } }
 
 @media screen and (max-width: 42em) {
   .main-content {
-    /* padding: 2rem 4rem; */
+    padding: 2rem 1rem;
     font-size: 1rem; } }
 
 .site-footer {
@@ -347,10 +347,6 @@ a {
 }
 
 
-.content p {
-	color: #707793;
-}
-
 @media (max-width: 1024px) {
 	.sidebar {
 		max-width: 200px;
@@ -372,7 +368,7 @@ a {
 		height: 100vh;
 		width: 100%;
 		max-width: 300px;
-    min-width: 300px;
+    min-width: 200px;
 		transition: 0.2s linear;
 	}
 
