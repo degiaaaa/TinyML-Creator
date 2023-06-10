@@ -349,8 +349,10 @@ a {
   margin-left: 1.5em; 
 }
 
+
 .sidebar .menu .sub-menu-item:hover,
 .sidebar .menu .sub-menu-item.is-active {
+>>>>>>> 3dd0468dafab4083625de06b61c90a412783638d
 	color:  #85b5d9;
   border-right: 5px solid #85b5d9;
 }
