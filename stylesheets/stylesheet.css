@@ -355,6 +355,9 @@ a {
 	color:  #85b5d9;
   border-right: 5px solid #85b5d9;
 }
+is-active {
+  background-color: #85b5d9;
+}
 
 @media (max-width: 1024px) {
 	.sidebar {
