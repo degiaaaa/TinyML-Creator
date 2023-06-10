@@ -69,13 +69,10 @@
 
 
 	
-function changeColor(el) {
-        const activeItems = sidebar.querySelectorAll('.active');
-        activeItems.forEach((item) => {
-          item.classList.remove('active');
-        });
-        el.classList.add('active');
-      }
+	  function changeColor(el){
+    document.querySelector(".menu-item.is-active").classList.remove("is-active")
+    el.classList.add("is-active")
+}
 /*
       menuItems.forEach((menuItem) => {
         menuItem.addEventListener('click', () => {
