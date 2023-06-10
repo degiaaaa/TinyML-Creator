@@ -1,121 +1,85 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <style>
+    .active {
+      background-color: rgb(177, 177, 177);
+    }
+  </style>
+</head>
+
+<body>
   <section class="page-header">
-  <h1 class="project-name">The TinyML Guide</h1>
-  <h2 class="project-tagline"></h2>
-  <a href="https://github.com/phuston/patrickandfrantonarethebestninjas" class="btn">View on GitHub</a>
-  <a href="https://github.com/phuston/patrickandfrantonarethebestninjas/zipball/master" class="btn">Download .zip</a>
-  <a href="https://github.com/phuston/patrickandfrantonarethebestninjas/tarball/master" class="btn">Download .tar.gz</a>
+    <h1 class="project-name">The TinyML Guide</h1>
+    <h2 class="project-tagline"></h2>
+    <a href="https://github.com/phuston/patrickandfrantonarethebestninjas" class="btn">View on GitHub</a>
+    <a href="https://github.com/phuston/patrickandfrantonarethebestninjas/zipball/master" class="btn">Download .zip</a>
+    <a href="https://github.com/phuston/patrickandfrantonarethebestninjas/tarball/master" class="btn">Download .tar.gz</a>
   </section>
 
-<section>
+  <section>
+    <div class="app">
+      <div class="menu-toggle">
+        <div class="hamburger">
+          <span></span>
+        </div>
+      </div>
 
-	<div class="app">
-		<div class="menu-toggle">
-			<div class="hamburger">
-				<span></span>
-			</div>
-		</div>
+      <aside class="sidebar">
+        <h3>Menu</h3>
+        <div>
+          <div class="container">
+            <nav class="menu">
+              <ul>
+                <li><a href="1" class="menu-item">Introduction</a></li>
+                <li><a href="2" class="menu-item">Microcontroller Basics</a>
+                  <ul class="sub-menu">
+                    <li><a href="hello" class="sub-menu-item">Service 1</a></li>
+                  </ul>
+                </li>
+                <li><a href="3" class="menu-item">Machine Learning Basics</a></li>
+                <li><a href="4" class="menu-item">Python Basics</a></li>
+                <li><a href="4" class="menu-item">Projects</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </aside>
 
-		<aside class="sidebar">
-			<h3>Menu</h3>
-			<div> 
-				<div class="container">	
-			<nav class="menu">
-					<ul>
-						<li> <a href="1" class="menu-item">Introduction </a> </li>
-						<li> <a href="2" class="menu-item" >Microcontroller Basics </a> 
-							<ul class="sub-menu">
-								<li><a href="hello" class="sub-menu-item">Service 1</a></li>
-							</ul>
-							</li>
-						<li> <a href="3" class="menu-item">Machine Learning Basics </a> </li>
-						<li> <a href="4" class="menu-item">Python Basics</a> </li>
-						<li> <a href="4" class="menu-item">Projects</a> </li>
-					</ul>
-			</nav>
-				</div>
-					</div>
-		</aside>
+      <main class="main-content">
+        {{ content }}
+      </main>
+    </div>
 
-		<main class="main-content">
-      {{ content }}
-	</div>
+    <script>
+      const menu_toggle = document.querySelector('.menu-toggle');
+      const sidebar = document.querySelector('.sidebar');
 
-	<script>
-
-
-        const menu_toggle = document.querySelector('.menu-toggle');
-        const sidebar = document.querySelector('.sidebar');
-
-        menu_toggle.addEventListener('click', () => {
-            menu_toggle.classList.toggle('is-active');
-            sidebar.classList.toggle('is-active');
-        });
-
-
-
-		$('li . menu-item').click(function(){
-     $(this).addClass('active');
-     $(this).siblings().removeClass('active');
-})
-
- /*
-		const menu_toggle = document.querySelector('.menu-toggle');
-		const sidebar = document.querySelector('.sidebar');
-
-		var menuItems = document.querySelectorAll(".menu-item");
-
-		 menu_toggle.addEventListener('click', () => {
-			menu_toggle.classList.toggle('is-active');
-			sidebar.classList.toggle('is-active');
-		});
-
-		menuItems.forEach((menuItem) => {
-        menuItem.addEventListener('click', () => {
-          menuItem.classList.add('is-active');
-        });
+      menu_toggle.addEventListener('click', () => {
+        menu_toggle.classList.toggle('is-active');
+        sidebar.classList.toggle('is-active');
       });
 
-		
-	
-var menuItems = document.querySelectorAll(".menu-item");
-			for (var i = 0; i < menuItems.length; i++) {
-				menuItems[i].addEventListener("click", function() {
-      sidebar.classList.add("is-active");
-   });
-}
+      const menuItems = document.querySelectorAll('.menu-item');
 
-		$(function(){
-    // this will get the full URL at the address bar
-    var url = window.location.href; 
-
-    // passes on every "a" tag 
-    $("#sub-header a").each(function() {
-            // checks if its the same on the address bar
-        if(url == (this.href)) { 
-            $(this).closest("li").addClass("active");
-        }
-    });
-});
-*/
-
-
-
-	</script>
-</section>
-
+      menuItems.forEach((menuItem) => {
+        menuItem.addEventListener('click', () => {
+          menuItems.forEach((item) => {
+            item.classList.remove('active');
+          });
+          menuItem.classList.add('active');
+        });
+      });
+    </script>
+  </section>
 </body>
 
 </html>
