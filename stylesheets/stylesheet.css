@@ -378,6 +378,19 @@ a {
 }
 
 
+.menu-item.active,
+.menu-item:hover {
+  background-color: #2e3047;
+  color: solid #85b5d9; /* Optional: Change text color for active/hovered item */
+}
+
+/* Add styles for active sub-menu item */
+.sub-menu .sub-menu-item.active,
+.sub-menu .sub-menu-item:hover {
+  background-color: #2e3047;
+  color: solid #85b5d9; /* Optional: Change text color for active/hovered item */
+}
+
 @media (max-width: 1024px) {
 	.sidebar {
 		max-width: 200px;

@@ -9,11 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  <style>
-    .active {
-      background-color: rgb(177, 177, 177);
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -67,17 +63,26 @@
         menu_toggle.classList.toggle('is-active');
         sidebar.classList.toggle('is-active');
       });
+	  const menuItems = document.querySelectorAll('.menu-item');
 
-      const menuItems = document.querySelectorAll('.menu-item');
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener('click', () => {
+    menuItems.forEach((item) => {
+      item.classList.remove('active');
+    });
+    menuItem.classList.add('active');
+  });
 
-      menuItems.forEach((menuItem) => {
-        menuItem.addEventListener('click', () => {
-          menuItems.forEach((item) => {
-            item.classList.remove('active');
-          });
-          menuItem.classList.add('active');
-        });
-      });
+  menuItem.addEventListener('mouseenter', () => {
+    menuItem.classList.add('active');
+  });
+
+  menuItem.addEventListener('mouseleave', () => {
+    if (!menuItem.classList.contains('sub-menu-item') || !menuItem.classList.contains('active')) {
+      menuItem.classList.remove('active');
+    }
+  });
+});
     </script>
   </section>
 </body>
