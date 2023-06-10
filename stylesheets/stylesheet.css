@@ -334,6 +334,9 @@ a {
 	text-decoration: none;
 	transition: 0.2s linear;
 }
+.active {
+  background-color: #85b5d9;
+}
 
 .sidebar .menu .menu-item:hover,
 .sidebar .menu .menu-item.active {
