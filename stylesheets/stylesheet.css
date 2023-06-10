@@ -333,17 +333,22 @@ a {
 	transition: 0.2s linear;
 }
 
-.sub-menu {
-  display: none;
-  padding-left: 20rem;
-}
-
-.menu-item:hover .sub-menu {
+.sidebar .menu .sub-menu {
   display: block;
+	padding: 1em;
+	color: #FFF;
+	text-decoration: none;
+	transition: 0.2s linear;
 }
 
-.sub-menu-item {
-  padding: 5rem;
+.sidebar .menu .menu-item .sub-menu:hover {
+  
+  color:  #85b5d9;
+}
+
+.sidebar .menu .sub-menu-item {
+  padding: 1em;
+  margin-left: 3em; /* Adjust the value as needed */
 }
 
 .sidebar .menu .menu-item:hover,
