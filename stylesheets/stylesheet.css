@@ -346,7 +346,7 @@ a {
 	border-right: 5px solid #85b5d9;
 }
 
-.sidebar .menu .sub-menu {
+.sidebar .menu .sub-menu-item {
   display: block;
 	padding: 1em;
 	color: #FFF;
@@ -354,14 +354,14 @@ a {
 	transition: 0.2s linear;
 }
 
-.sidebar .menu .menu-item .sub-menu:hover {
+.sidebar .menu .menu-item .sub-menu-item:hover {
   
   color:  #85b5d9;
 }
 
 .sidebar .menu .sub-menu-item {
   padding: 1em;
-  margin-left: 2em; /* Adjust the value as needed */
+  margin-left: 1.5em; 
 }
 
 .sidebar .menu .menu-item .sub-menu-item:hover,
