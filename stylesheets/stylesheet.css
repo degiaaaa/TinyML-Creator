@@ -339,7 +339,7 @@ a {
   border-right: 5px solid #85b5d9;
   
 }
-.sidebar .menu .sub-menu-item {
+.sidebar .menu .menu-item .sub-menu-item {
   display: block;
 	padding: 1em;
 	color: #FFF;
@@ -350,8 +350,8 @@ a {
 }
 
 
-.sidebar .menu .sub-menu-item:hover,
-.sidebar .menu .sub-menu-item.is-active {
+.sidebar .menu .menu-item .sub-menu-item:hover,
+.sidebar .menu .menu-item .sub-menu-item.is-active {
 	color:  #85b5d9;
   border-right: 5px solid #85b5d9;
 }
