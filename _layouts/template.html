@@ -76,12 +76,10 @@
         });
 
 
-	$(".menu-item>li").each(function() {
-    var menuItem = $(this);
-    if (menuItem.find("a").attr("href") == location.pathname) {
-		menuItem.addClass("active");
-    }
-});
+		$('li . menu-item').click(function(){
+     $(this).addClass('active');
+     $(this).siblings().removeClass('active');
+})
 
  /*
 		const menu_toggle = document.querySelector('.menu-toggle');
