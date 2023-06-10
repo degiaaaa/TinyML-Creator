@@ -9,7 +9,11 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  
+  <style>
+    .active {
+      background-color: rgb(177, 177, 177);
+    }
+  </style>
 </head>
 
 <body>
@@ -64,31 +68,30 @@
         sidebar.classList.toggle('is-active');
       });
 
-	  
+
 	  const menuItems = document.querySelectorAll('.menu-item');
-const subMenuItems = document.querySelectorAll('.sub-menu-item');
+      const subMenuItems = document.querySelectorAll('.sub-menu-item');
 
-menuItems.forEach((menuItem) => {
-  menuItem.addEventListener('click', () => {
-    if (menuItem.classList.contains('active')) {
-      menuItem.classList.remove('active');
-    } else {
-      menuItems.forEach((item) => {
-        item.classList.remove('active');
+      menuItems.forEach((menuItem) => {
+        menuItem.addEventListener('click', () => {
+          if (!menuItem.classList.contains('active')) {
+            menuItems.forEach((item) => {
+              item.classList.remove('active');
+            });
+            menuItem.classList.add('active');
+          }
+        });
       });
-      menuItem.classList.add('active');
-    }
-  });
-});
 
-subMenuItems.forEach((subMenuItem) => {
-  subMenuItem.addEventListener('click', () => {
-    subMenuItems.forEach((item) => {
-      item.classList.remove('active');
-    });
-    subMenuItem.classList.add('active');
-  });
-});
+      subMenuItems.forEach((subMenuItem) => {
+        subMenuItem.addEventListener('click', () => {
+          subMenuItems.forEach((item) => {
+            item.classList.remove('active');
+          });
+          subMenuItem.classList.add('active');
+        });
+      });
+
     </script>
   </section>
 </body>
