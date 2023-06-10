@@ -361,13 +361,7 @@ a {
 }
 
 .sidebar .menu .menu-item.active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background-color: #85b5d9;
+  color: #FFF;
 }
 
 .sidebar .menu .sub-menu-item:hover,
@@ -377,16 +371,19 @@ a {
 }
 
 .sidebar .menu .sub-menu-item.active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
+
+  color: #FFF;
+}
+.sidebar .menu .menu-item.active::after,
+.sidebar .menu .menu-item:hover::after {
+ 
   background-color: #85b5d9;
 }
+.sidebar .menu .sub-menu .sub-menu-item.active::after,
+.sidebar .menu .sub-menu .sub-menu-item:hover::after {
 
-
+  background-color: #85b5d9;
+}
 /*
 .sidebar .menu  .sub-menu-item:hover {
   
