@@ -511,11 +511,12 @@ a {
   
 }
 
-.sidebar .menu .menu-item.permanent-hover,
-.sidebar .menu .menu-item.permanent-hover:hover {
+.sidebar .menu .menu-item.is-active,
+.sidebar .menu .menu-item:hover {
   color: #85b5d9;
   border-right: 5px solid #85b5d9;
 }
+
 
 /*
 .sidebar h3 {

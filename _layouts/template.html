@@ -34,11 +34,11 @@
 				<div class="container">	
 			<nav class="menu">
 					<ul>
-						<li> <a href="1" class="menu-item">Introduction </a> </li>
-						<li> <a href="2" class="menu-item" >Microcontroller Basics </a> </li>
-						<li> <a href="3" class="menu-item">Machine Learning Basics </a> </li>
-						<li> <a href="4" class="menu-item">Python Basics</a> </li>
-						<li> <a href="4" class="menu-item">Projects</a> </li>
+						<li> <a href="1" class="menu-item" onmouseover="activateMenuItem(this)">Introduction </a> </li>
+						<li> <a href="2" class="menu-item" onmouseover="activateMenuItem(this)">Microcontroller Basics </a> </li>
+						<li> <a href="3" class="menu-item" onmouseover="activateMenuItem(this)">Machine Learning Basics </a> </li>
+						<li> <a href="4" class="menu-item" onmouseover="activateMenuItem(this)">Python Basics</a> </li>
+						<li> <a href="4" class="menu-item" onmouseover="activateMenuItem(this)">Projects</a> </li>
 					</ul>
 			</nav>
 				</div>
@@ -86,7 +86,13 @@ var menuItems = document.querySelectorAll(".menu-item");
     });
 });
 */
+function activateMenuItem(menuItem) {
+  menuItem.classList.add("is-active");
+}
 
+function deactivateMenuItem(menuItem) {
+  menuItem.classList.remove("is-active");
+}
   // Warte, bis das DOM vollständig geladen ist
  // Füge einen Event Listener für das Laden des DOMs hinzu
  document.addEventListener('DOMContentLoaded', function() {
