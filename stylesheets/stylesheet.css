@@ -378,15 +378,16 @@ a {
 }
 
 
-.menu-item.active,
-.menu-item:hover {
+
+
+.sidebar .menu-item.active,
+.sidebar .menu-item:hover {
   background-color: #2e3047;
   color: solid #85b5d9; /* Optional: Change text color for active/hovered item */
 }
 
-/* Add styles for active sub-menu item */
-.sub-menu .sub-menu-item.active,
-.sub-menu .sub-menu-item:hover {
+.sidebar .sub-menu .sub-menu-item.active,
+.sidebar .sub-menu .sub-menu-item:hover {
   background-color: #2e3047;
   color: solid #85b5d9; /* Optional: Change text color for active/hovered item */
 }
