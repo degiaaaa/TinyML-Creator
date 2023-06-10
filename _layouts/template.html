@@ -71,7 +71,7 @@
 
 	  const menuItems = document.querySelectorAll('.menu-item');
       const subMenuItems = document.querySelectorAll('.sub-menu-item');
-
+/*
       menuItems.forEach((menuItem) => {
         menuItem.addEventListener('click', () => {
           if (!menuItem.classList.contains('active')) {
@@ -90,7 +90,14 @@
           });
           subMenuItem.classList.add('active');
         });
-      });
+      });*/
+
+$(function(){
+ $('.menu-item').click(function(){    
+   $('.menu-item').removeClass('activeClick');
+   $(this).addClass('activeClick');
+  });
+});
 
     </script>
   </section>
