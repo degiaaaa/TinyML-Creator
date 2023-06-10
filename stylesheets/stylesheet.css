@@ -347,19 +347,6 @@ a {
 }
 
 
-
-
-.content {
-	flex: 1 1 0;
-	padding: 2rem;
-}
-
-.content h1 {
-	color: #3C3F58;
-	font-size: 2.5rem;
-	margin-bottom: 1rem;
-}
-
 .content p {
 	color: #707793;
 }
@@ -367,6 +354,7 @@ a {
 @media (max-width: 1024px) {
 	.sidebar {
 		max-width: 200px;
+    min-width: 200px;
 	}
 }
 
