@@ -380,18 +380,21 @@ a {
 
 
 
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background-color: #2e3047;
-  color: solid #85b5d9; /* Optional: Change text color for active/hovered item */
+/* Add styles for active and hover states */
+.menu-item.active,
+.menu-item:hover,
+.menu-item.active:hover {
+  background-color: rgb(177, 177, 177);
+  color: #fff; /* Optional: Change text color for active/hovered item */
 }
 
-.sidebar .sub-menu .sub-menu-item.active,
-.sidebar .sub-menu .sub-menu-item:hover {
-  background-color: #2e3047;
-  color: solid #85b5d9; /* Optional: Change text color for active/hovered item */
+/* Add styles for active sub-menu item */
+.sub-menu .sub-menu-item.active,
+.sub-menu .sub-menu-item:hover,
+.sub-menu .sub-menu-item.active:hover {
+  background-color: rgb(177, 177, 177);
+  color: #fff; /* Optional: Change text color for active/hovered item */
 }
-
 @media (max-width: 1024px) {
 	.sidebar {
 		max-width: 200px;
