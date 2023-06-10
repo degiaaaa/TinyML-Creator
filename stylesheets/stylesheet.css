@@ -380,7 +380,7 @@ a {
 
 
 
-/* Add styles for active and hover states */
+/* 
 .menu-item.active,
 .menu-item:hover,
 .menu-item.active:hover {
@@ -388,13 +388,13 @@ a {
 
 }
 
-/* Add styles for active sub-menu item */
+/* 
 .sub-menu .sub-menu-item.active,
 .sub-menu .sub-menu-item:hover,
 .sub-menu .sub-menu-item.active:hover {
   color: #85b5d9;
   
-}
+}*/
 
 @media (max-width: 1024px) {
 	.sidebar {
