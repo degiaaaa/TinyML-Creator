@@ -385,7 +385,7 @@ a {
 .menu-item:hover,
 .menu-item.active:hover {
   color: #85b5d9;
-  background-color: #2e3047;
+
 }
 
 /* Add styles for active sub-menu item */
@@ -393,7 +393,7 @@ a {
 .sub-menu .sub-menu-item:hover,
 .sub-menu .sub-menu-item.active:hover {
   color: #85b5d9;
-  background-color: #2e3047;
+  
 }
 
 @media (max-width: 1024px) {
