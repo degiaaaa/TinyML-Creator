@@ -511,7 +511,7 @@ a {
     height: 100vh;
     width: 100%;
     max-width: 300px;
-    min-width: 200px;
+    min-width: 300px;
     transition: 0.2s linear;
   }
 
