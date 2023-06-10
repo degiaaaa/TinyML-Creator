@@ -443,6 +443,9 @@ a {
   top: 0;
   transform: rotate(90deg);
 }
+
+
+
 .sidebar .menu .menu-item {
   display: block;
   padding: 1em;
@@ -451,14 +454,17 @@ a {
   transition: 0.2s linear;
 }
 
-.sidebar .menu .menu-item:hover,
-.sidebar .menu .menu-item.active,
-.sidebar .menu .menu-item.permanent-hover {
+.sidebar .menu .menu-item:hover {
   color: #85b5d9;
   border-right: 5px solid #85b5d9;
 }
 
 .sidebar .menu .menu-item.active,
 .sidebar .menu .menu-item.permanent-hover {
+  color: #85b5d9;
+  border-right: 5px solid #85b5d9;
+}
+
+.sidebar .menu .menu-item.active {
   background-color: #2e3047;
 }
