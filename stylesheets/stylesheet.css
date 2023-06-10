@@ -494,7 +494,7 @@ a {
 	transition: 0.2s linear;
 }
 
-/*
+
 .sidebar .menu .menu-item:hover,
 .sidebar .menu .menu-item.is-active {
 	color:  #85b5d9;
@@ -504,7 +504,9 @@ a {
   color: #85b5d9;
   background-color: #2e3047;
 }
-*/
+
+
+/*
 .sidebar .menu .menu-item:hover {
   color:  #85b5d9;
 	border-right: 5px solid #85b5d9;
@@ -512,7 +514,7 @@ a {
 }
 
 
-/*
+
 .sidebar .menu .menu-item.is-active,
 .sidebar .menu .menu-item:hover {
   color: #85b5d9;
