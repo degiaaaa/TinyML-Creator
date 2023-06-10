@@ -47,7 +47,7 @@
                 </li>
                 <li><a href="3" class="menu-item">Machine Learning Basics</a></li>
                 <li><a href="4" class="menu-item">Python Basics</a></li>
-                <li><a href="4" class="menu-item is-active">Projects </a></li>
+                <li><a href="4" class="menu-item">Projects</a></li>
               </ul>
             </nav>
           </div>
@@ -70,7 +70,25 @@
 
 
 	  const menuItems = document.querySelectorAll('.menu-item');
-      const subMenuItems = document.querySelectorAll('.sub-menu-item');
+  const subMenuItems = document.querySelectorAll('.sub-menu-item');
+
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener('click', () => {
+      menuItems.forEach((item) => {
+        item.classList.remove('is-active');
+      });
+      menuItem.classList.add('is-active');
+    });
+  });
+
+  subMenuItems.forEach((subMenuItem) => {
+    subMenuItem.addEventListener('click', () => {
+      subMenuItems.forEach((item) => {
+        item.classList.remove('is-active');
+      });
+      subMenuItem.classList.add('is-active');
+    });
+  });
 /*
       menuItems.forEach((menuItem) => {
         menuItem.addEventListener('click', () => {
@@ -92,26 +110,7 @@
         });
       });*/
 
-	  const menuItems = document.querySelectorAll('.menu-item');
-  const subMenuItems = document.querySelectorAll('.sub-menu-item');
 
-  menuItems.forEach((menuItem) => {
-    menuItem.addEventListener('click', () => {
-      menuItems.forEach((item) => {
-        item.classList.remove('active');
-      });
-      menuItem.classList.add('active');
-    });
-  });
-
-  subMenuItems.forEach((subMenuItem) => {
-    subMenuItem.addEventListener('click', () => {
-      subMenuItems.forEach((item) => {
-        item.classList.remove('active');
-      });
-      subMenuItem.classList.add('active');
-    });
-  });
 
     </script>
   </section>
