@@ -88,19 +88,32 @@ var menuItems = document.querySelectorAll(".menu-item");
 */
 
   // Warte, bis das DOM vollständig geladen ist
-  document.addEventListener('DOMContentLoaded', function() {
+ // Füge einen Event Listener für das Laden des DOMs hinzu
+ document.addEventListener('DOMContentLoaded', function() {
     // Suche nach allen Menüpunkten in der Sidebar
     var menuItems = document.querySelectorAll('.sidebar .menu .menu-item');
 
-    // Füge einen Event Listener für jeden Menüpunkt hinzu
+    // Überprüfe, ob einer der Menüpunkte bereits aktiv ist
     menuItems.forEach(function(item) {
       // Überprüfe, ob der Menüpunkt aktiv ist
       if (item.classList.contains('is-active')) {
         // Füge dem aktivem Menüpunkt die CSS-Klasse für den permanenten Hover hinzu
         item.classList.add('permanent-hover');
       }
+
+      // Füge den Event Listener für den permanenten Hover hinzu
+      item.addEventListener('mouseenter', function() {
+        // Füge dem Menüpunkt die CSS-Klasse für den permanenten Hover hinzu
+        this.classList.add('permanent-hover');
+      });
+
+      item.addEventListener('mouseleave', function() {
+        // Entferne die CSS-Klasse für den permanenten Hover, wenn der Mauszeiger den Menüpunkt verlässt
+        this.classList.remove('permanent-hover');
+      });
     });
   });
+ 
 
 
 
