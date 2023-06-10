@@ -444,7 +444,12 @@ a {
   transform: rotate(90deg);
 }
 
-
+.sidebar {
+	flex: 1 1 0;
+	max-width: 300px;
+	padding: 2rem 1rem;
+	background-color: #2e3047;
+} 
 
 .sidebar .menu .menu-item {
   display: block;
