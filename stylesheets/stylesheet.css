@@ -317,7 +317,6 @@ a {
 .sidebar {
 	flex: 1 1 0;
 	max-width: 300px;
-	padding: 2rem 1rem;
 	background-color: #2e3047;
 }
 
@@ -328,7 +327,6 @@ a {
 
 .sidebar .menu .menu-item {
 	display: block;
-	padding: 1em;
 	color: #FFF;
 	text-decoration: none;
 	transition: 0.2s linear;
