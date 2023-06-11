@@ -1,7 +1,7 @@
 ---
 title: Projects
 layout: template
-filename: index
+filename: index.md
 --- 
 # Projects
 <!---
