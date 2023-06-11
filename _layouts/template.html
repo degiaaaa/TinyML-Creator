@@ -87,9 +87,11 @@
         parentMenuItem.classList.add('is-active');
       }
     }*/
+    <script>
   const menu_toggle = document.querySelector('.menu-toggle');
   const sidebar = document.querySelector('.sidebar');
   const menuItems = document.querySelectorAll('.menu-item');
+  const subMenuItems = document.querySelectorAll('.sub-menu-item');
 
   menu_toggle.addEventListener('click', () => {
     menu_toggle.classList.toggle('is-active');
@@ -102,13 +104,33 @@
     });
   });
 
+  subMenuItems.forEach(item => {
+    item.addEventListener('click', (event) => {
+      event.stopPropagation(); // Verhindert das Auslösen des Klick-Events auf dem übergeordneten Menüelement
+      changeColor(item);
+    });
+  });
+
   function changeColor(el) {
     const activeMenuItem = document.querySelector('.menu-item.is-active');
     if (activeMenuItem) {
       activeMenuItem.classList.remove('is-active');
     }
+
+    const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+    if (activeSubMenuItem) {
+      activeSubMenuItem.classList.remove('is-active');
+    }
+
     el.classList.add('is-active');
+
+    const parentMenuItem = el.closest('.menu-item');
+    if (parentMenuItem) {
+      parentMenuItem.classList.add('is-active');
+    }
   }
+</script>
+
 </script>
   </script>
 </body>
