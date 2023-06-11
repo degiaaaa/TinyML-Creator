@@ -355,12 +355,12 @@ a {
 }
 .sidebar .menu .menu-item .sub-menu-item:hover,
 .sidebar .menu .menu-item .sub-menu-item.is-active {
-	color:  #85b5d9!important;
-  border-right: 5px solid #85b5d9!important;
+	color:  #85b5d9;
+  border-right: 5px solid #85b5d9;
 }
 is-active {
-  background-color: #85b5d9!important;
-  border-right: 5px solid #85b5d9!important;
+  background-color: #85b5d9;
+  border-right: 5px solid #85b5d9;
 }
 
 @media (max-width: 1024px) {
