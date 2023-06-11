@@ -344,7 +344,7 @@ a {
 .sidebar .menu .menu-item .sub-menu-item {
   display: block;
 	padding: 1em !important;
-  margin-left: 1.5rem;
+  margin-left: 1.5em;
   color: #FFF;
   text-decoration: none;
 	transition: 0.2s linear;
