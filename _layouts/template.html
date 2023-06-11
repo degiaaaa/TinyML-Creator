@@ -31,18 +31,17 @@
           <span></span>
         </div>
       </div>
-
+  
       <aside class="sidebar">
-         <h3>Menu</h3> 
+        <h3>Menu</h3>
         <div>
           <div class="container">
             <nav class="menu">
-              
               <a href="#1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a>
               <a href="#2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a>
-                <ul class="sub-menu">
-                  <li><a href="#hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a></li>
-                </ul>
+              <div class="submenu">
+                <a href="#hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a>
+              </div>
               <a href="#3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a>
               <a href="#4" onclick="changeColor(this)" class="menu-item">Python Basics</a>
               <a href="#5" onclick="changeColor(this)" class="menu-item">Projects</a>
@@ -50,7 +49,7 @@
           </div>
         </div>
       </aside>
-
+  
       <main class="main-content">
         {{ content }}
       </main>
