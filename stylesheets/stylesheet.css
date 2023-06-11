@@ -521,6 +521,7 @@ a {
 .sidebar .menu .sub-menu-item.is-active {
   color: #85b5d9;
   border-right: 5px solid #85b5d9;
+  border-right: 5px solid #85b5d9;
 }
 
 .sidebar .menu .menu-item.is-active .sub-menu-item.is-active {
