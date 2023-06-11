@@ -67,10 +67,17 @@
       });
 
 
-      function changeColor(el) {
+
+
+function changeColor(el) {
   const activeMenuItem = document.querySelector('.menu-item.is-active');
   activeMenuItem.classList.remove('is-active');
   el.classList.add('is-active');
+
+  const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+  if (activeSubMenuItem) {
+    activeSubMenuItem.classList.remove('is-active');
+  }
 }
 
 function changeColorSub(el) {
