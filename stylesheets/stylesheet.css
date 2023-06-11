@@ -328,7 +328,7 @@ a {
 
 .sidebar .menu .menu-item {
 	display: block;
-	padding: 1em;
+
 	color: #FFF;
 	text-decoration: none;
 	transition: 0.2s linear;
@@ -343,8 +343,7 @@ a {
 
 .sidebar .menu .menu-item .sub-menu-item {
   display: block;
-	padding: 1em !important;
-  margin-left: 1.5em;
+	padding: 2em 1.5em!important;
   color: #FFF;
   text-decoration: none;
 	transition: 0.2s linear;
