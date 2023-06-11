@@ -33,15 +33,16 @@
       </div>
 
       <aside class="sidebar">
-        <h3>Menu</h3>
+         <h3>Menu</h3> 
         <div>
           <div class="container">
             <nav class="menu">
+              
               <a href="#1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a>
               <a href="#2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a>
-              <ul class="sub-menu">
-                <li><a href="#hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a></li>
-              </ul>
+                <ul class="sub-menu">
+                  <li><a href="#hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a></li>
+                </ul>
               <a href="#3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a>
               <a href="#4" onclick="changeColor(this)" class="menu-item">Python Basics</a>
               <a href="#5" onclick="changeColor(this)" class="menu-item">Projects</a>
@@ -56,27 +57,33 @@
     </div>
   </section>
 
-  <script>
-    const menu_toggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
+    <script>
+      const menu_toggle = document.querySelector('.menu-toggle');
+      const sidebar = document.querySelector('.sidebar');
 
-    menu_toggle.addEventListener('click', () => {
-      menu_toggle.classList.toggle('is-active');
-      sidebar.classList.toggle('is-active');
-    });
+      menu_toggle.addEventListener('click', () => {
+        menu_toggle.classList.toggle('is-active');
+        sidebar.classList.toggle('is-active');
+      });
 
-    function changeColor(el) {
-      const activeMenuItem = document.querySelector('.menu-item.is-active');
-      activeMenuItem.classList.remove('is-active');
-      el.classList.add('is-active');
-    }
 
-    function changeColorSub(el) {
-      const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
-      activeSubMenuItem.classList.remove('is-active');
-      el.classList.add('is-active');
+      function changeColor(el) {
+  const activeMenuItem = document.querySelector('.menu-item.is-active');
+  activeMenuItem.classList.remove('is-active');
+  el.classList.add('is-active');
+}
 
-      const activeMenuItem = document.querySelector('.menu-item.is-active');
-      activeMenuItem.classList.add('is-active');
-    }
- 
+function changeColorSub(el) {
+  const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+  activeSubMenuItem.classList.remove('is-active');
+  el.classList.add('is-active');
+
+  const activeMenuItem = document.querySelector('.menu-item.is-active');
+  activeMenuItem.classList.add('is-active');
+}
+
+    </script>
+  </section>
+</body>
+
+</html>
