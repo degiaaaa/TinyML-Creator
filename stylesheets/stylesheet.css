@@ -342,25 +342,25 @@ a {
 
 .sidebar .menu .menu-item .sub-menu-item {
   display: block;
-	padding: 1.5em;
+	padding: 1.5em !important;
   margin-left: 1.5em; 
   color: #FFF;
-}
-
-.sidebar .menu .menu-item .sub-menu-item {
-	text-decoration: none;
+  text-decoration: none;
 	transition: 0.2s linear;
 
 }
 
 
+
+
 .sidebar .menu .menu-item .sub-menu-item:hover,
 .sidebar .menu .menu-item .sub-menu-item.is-active {
-	color:  #85b5d9;
-  border-right: 5px solid #85b5d9;
+	color:  #85b5d9!important;
+  border-right: 5px solid #85b5d9!important;
 }
 is-active {
-  background-color: #85b5d9;
+  background-color: #85b5d9!important;
+  border-right: 5px solid #85b5d9!important;
 }
 
 @media (max-width: 1024px) {
