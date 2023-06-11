@@ -66,7 +66,9 @@
 
   function changeColor(el) {
   const activeMenuItem = document.querySelector('.menu-item.is-active');
-  activeMenuItem.classList.remove('is-active');
+  if (activeMenuItem) {
+    activeMenuItem.classList.remove('is-active');
+  }
   el.classList.add('is-active');
 
   const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
@@ -76,21 +78,22 @@
 }
 
 function changeColorSub(el) {
+  const activeMenuItem = document.querySelector('.menu-item.is-active');
+  if (activeMenuItem) {
+    activeMenuItem.classList.remove('is-active');
+  }
   const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
   if (activeSubMenuItem) {
     activeSubMenuItem.classList.remove('is-active');
   }
   el.classList.add('is-active');
 
-  const activeMenuItem = document.querySelector('.menu-item.is-active');
-  if (activeMenuItem) {
-    activeMenuItem.classList.remove('is-active');
-  }
-  const activeMenuItemParent = el.closest('.menu-item');
-  if (activeMenuItemParent) {
-    activeMenuItemParent.classList.add('is-active');
+  const parentMenuItem = el.closest('.menu-item');
+  if (parentMenuItem) {
+    parentMenuItem.classList.add('is-active');
   }
 }
+
     </script>
   </section>
 </body>
