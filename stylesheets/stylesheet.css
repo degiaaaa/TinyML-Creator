@@ -343,14 +343,12 @@ a {
 
 .sidebar .menu .menu-item .sub-menu-item {
 	display: block;
-	padding: 1em;
 	color: #FFF;
 	text-decoration: none;
 	transition: 0.2s linear;
 
 }
 .sidebar .menu .menu-item .sub-menu-item {
-	padding: 1em;
   margin-left: 1.5em;
 	
 
