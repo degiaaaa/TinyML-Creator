@@ -75,13 +75,14 @@
 
 function changeColorSub(el) {
   const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
-  activeSubMenuItem.classList.remove('is-active');
+  if (activeSubMenuItem) {
+    activeSubMenuItem.classList.remove('is-active');
+  }
   el.classList.add('is-active');
 
   const activeMenuItem = document.querySelector('.menu-item.is-active');
   activeMenuItem.classList.add('is-active');
 }
-
     </script>
   </section>
 </body>
