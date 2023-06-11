@@ -67,9 +67,7 @@
       });
 
 
-
-
-function changeColor(el) {
+      function changeColor(el) {
   const activeMenuItem = document.querySelector('.menu-item.is-active');
   activeMenuItem.classList.remove('is-active');
   el.classList.add('is-active');
@@ -89,6 +87,11 @@ function changeColorSub(el) {
 
   const activeMenuItem = document.querySelector('.menu-item.is-active');
   activeMenuItem.classList.add('is-active');
+
+  const activeMenuItemParent = activeMenuItem.closest('.menu-item');
+  if (activeMenuItemParent) {
+    activeMenuItemParent.classList.add('is-active');
+  }
 }
     </script>
   </section>
