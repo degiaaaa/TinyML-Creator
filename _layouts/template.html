@@ -30,90 +30,63 @@
         <h3>Menu</h3>
         <div class="container">
           <nav class="menu">
-            <a href="#" onclick="changeColor(this, 'section1')" class="menu-item is-active">Introduction</a>
-            <a href="#" onclick="changeColor(this, 'section2')" class="menu-item">Microcontroller Basics</a>
+            <a href="1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a>
+            <a href="2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a>
             <div class="submenu">
-              <a href="#" onclick="changeColorSub(this, 'section2_1')" class="sub-menu-item">Service 1</a>
+              <a href="hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a>
             </div>
-            <a href="#" onclick="changeColor(this, 'section3')" class="menu-item">Machine Learning Basics</a>
-            <a href="#" onclick="changeColor(this, 'section4')" class="menu-item">Python Basics</a>
-            <a href="#" onclick="changeColor(this, 'section5')" class="menu-item">Projects</a>
+            <a href="3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a>
+            <a href="4" onclick="changeColor(this)" class="menu-item">Python Basics</a>
+            <a href="5" onclick="changeColor(this)" class="menu-item">Projects</a>
           </nav>
-          
-          <!-- Sections/Content -->
-          <section id="section1">
-            <h2>Introduction</h2>
-            <p>This is the introduction section.</p>
-          </section>
-          
-          <section id="section2">
-            <h2>Microcontroller Basics</h2>
-            <p>This is the microcontroller basics section.</p>
-          </section>
-          
-          <section id="section2_1">
-            <h3>Service 1</h3>
-            <p>This is service 1 under microcontroller basics section.</p>
-          </section>
-          
-          <section id="section3">
-            <h2>Machine Learning Basics</h2>
-            <p>This is the machine learning basics section.</p>
-          </section>
-          
-          <section id="section4">
-            <h2>Python Basics</h2>
-            <p>This is the Python basics section.</p>
-          </section>
-          
-          <section id="section5">
-            <h2>Projects</h2>
-            <p>This is the projects section.</p>
-          </section>
-          
-          <script>
-            function changeColor(el, sectionId) {
-              const activeMenuItem = document.querySelector('.menu-item.is-active');
-              if (activeMenuItem) {
-                activeMenuItem.classList.remove('is-active');
-              }
-              el.classList.add('is-active');
-          
-              // Hide all sections
-              const sections = document.querySelectorAll('section');
-              sections.forEach((section) => {
-                section.style.display = 'none';
-              });
-          
-              // Show the selected section
-              const selectedSection = document.getElementById(sectionId);
-              if (selectedSection) {
-                selectedSection.style.display = 'block';
-              }
-            }
-          
-            function changeColorSub(el, sectionId) {
-              const activeMenuItem = document.querySelector('.menu-item.is-active');
-              if (activeMenuItem) {
-                activeMenuItem.classList.remove('is-active');
-              }
-              const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
-              if (activeSubMenuItem) {
-                activeSubMenuItem.classList.remove('is-active');
-              }
-              el.classList.add('is-active');
-          
-              // Hide all sections
-              const sections = document.querySelectorAll('section');
-              sections.forEach((section) => {
-                section.style.display = 'none';
-              });
-          
-              // Show the selected section
-              const selectedSection = document.getElementById(sectionId);
-              if (selectedSection) {
-                selectedSection.style.display = 'block';
-              }
-            }
-          </script>
-          
+        </div>
+      </aside>
+
+      <main class="main-content">
+        {{ content }}
+      </main>
+    </div>
+  </section>
+
+  <script>
+    const menu_toggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    menu_toggle.addEventListener('click', () => {
+      menu_toggle.classList.toggle('is-active');
+      sidebar.classList.toggle('is-active');
+    });
+
+    function changeColor(el) {
+      const activeMenuItem = document.querySelector('.menu-item.is-active');
+      if (activeMenuItem) {
+        activeMenuItem.classList.remove('is-active');
+      }
+      el.classList.add('is-active');
+
+      const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+      if (activeSubMenuItem) {
+        activeSubMenuItem.classList.remove('is-active');
+      }
+    }
+
+    function changeColorSub(el) {
+      const activeMenuItem = document.querySelector('.menu-item.is-active');
+      if (activeMenuItem) {
+        activeMenuItem.classList.remove('is-active');
+      }
+      const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+      if (activeSubMenuItem) {
+        activeSubMenuItem.classList.remove('is-active');
+      }
+      el.classList.add('is-active');
+
+      const parentMenuItem = el.closest('.menu-item');
+      if (parentMenuItem) {
+        parentMenuItem.classList.add('is-active');
+      }
+    }
+  </script>
+</body>
+
+</html>
