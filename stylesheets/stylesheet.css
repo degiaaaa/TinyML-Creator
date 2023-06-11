@@ -339,14 +339,18 @@ a {
   border-right: 5px solid #85b5d9;
   
 }
+
 .sidebar .menu .menu-item .sub-menu-item {
   display: block;
 	padding: 1em;
-	color: #FFF;
+  margin-left: 1.5em; 
+  color: #FFF;
+}
+
+.sidebar .menu .menu-item .sub-menu-item {
 	text-decoration: none;
 	transition: 0.2s linear;
-  padding: 1em;
-  margin-left: 1.5em; 
+
 }
 
 
