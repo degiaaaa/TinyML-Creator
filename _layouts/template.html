@@ -72,6 +72,12 @@ function changeColor(el) {
   activeMenuItem.classList.remove('is-active');
   el.classList.add('is-active');
 }
+
+function changeColorSub(el) {
+        const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+        activeSubMenuItem.classList.remove('is-active');
+        el.classList.add('is-active');
+      }
 /*
       menuItems.forEach((menuItem) => {
         menuItem.addEventListener('click', () => {
