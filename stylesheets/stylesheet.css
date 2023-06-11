@@ -321,10 +321,10 @@ a {
 	background-color: #2e3047;
 }
 
-/*
+
 .sidebar .menu {
 	margin: 0 -1rem;
-} */
+} 
 
 .sidebar .menu .menu-item {
 	display: block;
@@ -343,8 +343,8 @@ a {
 
 .sidebar .menu .menu-item .sub-menu-item {
   display: block;
-	padding: 1.5em !important;
-  margin-left: 1.5em; 
+	padding: 1em !important;
+  margin-left: 1.5rem;
   color: #FFF;
   text-decoration: none;
 	transition: 0.2s linear;
