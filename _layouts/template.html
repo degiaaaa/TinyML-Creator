@@ -49,6 +49,7 @@
   </section>
 
   <script>
+    /*
     const menu_toggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
 
@@ -85,7 +86,30 @@
       if (parentMenuItem) {
         parentMenuItem.classList.add('is-active');
       }
+    }*/
+  const menu_toggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  menu_toggle.addEventListener('click', () => {
+    menu_toggle.classList.toggle('is-active');
+    sidebar.classList.toggle('is-active');
+  });
+
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+      changeColor(item);
+    });
+  });
+
+  function changeColor(el) {
+    const activeMenuItem = document.querySelector('.menu-item.is-active');
+    if (activeMenuItem) {
+      activeMenuItem.classList.remove('is-active');
     }
+    el.classList.add('is-active');
+  }
+</script>
   </script>
 </body>
 
