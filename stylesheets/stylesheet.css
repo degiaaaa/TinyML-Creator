@@ -313,7 +313,6 @@ a {
   top: 0;
   transform: rotate(90deg);
 }
-
 .sidebar {
 	flex: 1 1 0;
 	max-width: 300px;
@@ -325,6 +324,8 @@ a {
 	margin: 0 -1rem;
 }
 
+
+
 .sidebar .menu .menu-item {
 	display: block;
 	padding: 1em;
@@ -334,28 +335,53 @@ a {
 }
 
 .sidebar .menu .menu-item:hover,
-.sidebar .menu .menu-item.is-active {
+.sidebar .menu .menu-item.active {
 	color:  #85b5d9;
   border-right: 5px solid #85b5d9;
-  
 }
-.sidebar .menu .menu-item .sub-menu-item {
+.sidebar .menu .menu-item.active {
+  color: #85b5d9;
+  background-color: #2e3047;
+  border-right: 5px solid #85b5d9;
+}
+
+.sidebar .menu .menu-item:hover {
+	border-right: 5px solid #85b5d9;
+}
+
+.sidebar .menu .sub-menu-item {
   display: block;
 	padding: 1em;
 	color: #FFF;
 	text-decoration: none;
 	transition: 0.2s linear;
+}
+
+.sidebar .menu  .sub-menu-item:hover {
+  border-right: 5px solid #85b5d9;
+  color:  #85b5d9;
+}
+
+.sidebar .menu .sub-menu-item {
   padding: 1em;
   margin-left: 1.5em; 
 }
 
-
 .sidebar .menu .menu-item .sub-menu-item:hover,
-.sidebar .menu .menu-item .sub-menu-item.is-active {
+.sidebar .menu .menu-item .sub-menu-item.active {
 	color:  #85b5d9;
   border-right: 5px solid #85b5d9;
 }
+.sidebar .menu .menu-item .sub-menu-item.active {
+  color: #85b5d9;
+  background-color: #2e3047;
+  border-right: 5px solid #85b5d9;
+}
 
+.sidebar .menu .menu-item .sub-menu-item:hover {
+	border-right: 5px solid #85b5d9;
+  color: #85b5d9;
+}
 
 @media (max-width: 1024px) {
 	.sidebar {
