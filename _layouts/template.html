@@ -30,14 +30,14 @@
         <h3>Menu</h3>
         <div class="container">
           <nav class="menu">
-            <a href="1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a>
-            <a href="2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a>
+            <a href="#1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a>
+            <a href="#2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a>
             <div class="submenu">
-              <a href="hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a>
+              <a href="#hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a>
             </div>
-            <a href="3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a>
-            <a href="4" onclick="changeColor(this)" class="menu-item">Python Basics</a>
-            <a href="5" onclick="changeColor(this)" class="menu-item">Projects</a>
+            <a href="#3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a>
+            <a href="#4" onclick="changeColor(this)" class="menu-item">Python Basics</a>
+            <a href="#5" onclick="changeColor(this)" class="menu-item">Projects</a>
           </nav>
         </div>
       </aside>
@@ -49,7 +49,7 @@
   </section>
 
   <script>
-    /*
+    
     const menu_toggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
 
@@ -86,49 +86,9 @@
       if (parentMenuItem) {
         parentMenuItem.classList.add('is-active');
       }
-    }*/
+    }
   
-  const menu_toggle = document.querySelector('.menu-toggle');
-  const sidebar = document.querySelector('.sidebar');
-  const menuItems = document.querySelectorAll('.menu-item');
-  const subMenuItems = document.querySelectorAll('.sub-menu-item');
-
-  menu_toggle.addEventListener('click', () => {
-    menu_toggle.classList.toggle('is-active');
-    sidebar.classList.toggle('is-active');
-  });
-
-  menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      changeColor(item);
-    });
-  });
-
-  subMenuItems.forEach(item => {
-    item.addEventListener('click', (event) => {
-      event.stopPropagation(); // Verhindert das Auslösen des Klick-Events auf dem übergeordneten Menüelement
-      changeColor(item);
-    });
-  });
-
-  function changeColor(el) {
-    const activeMenuItem = document.querySelector('.menu-item.is-active');
-    if (activeMenuItem) {
-      activeMenuItem.classList.remove('is-active');
-    }
-
-    const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
-    if (activeSubMenuItem) {
-      activeSubMenuItem.classList.remove('is-active');
-    }
-
-    el.classList.add('is-active');
-
-    const parentMenuItem = el.closest('.menu-item');
-    if (parentMenuItem) {
-      parentMenuItem.classList.add('is-active');
-    }
-  }
+  
 
   </script>
 </body>
