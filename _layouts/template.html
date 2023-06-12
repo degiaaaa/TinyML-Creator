@@ -66,17 +66,26 @@
     });
 
     function changeColor(el) {
-      const activeMenuItem = document.querySelector('.menu-item.is-active');
-      if (activeMenuItem) {
-        activeMenuItem.classList.remove('is-active');
-      }
-      el.classList.add('is-active');
+  const activeMenuItem = document.querySelector('.menu-item.is-active');
+  if (activeMenuItem) {
+    activeMenuItem.classList.remove('is-active');
+  }
+  el.classList.add('is-active');
 
-      const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
-      if (activeSubMenuItem) {
-        activeSubMenuItem.classList.remove('is-active');
-      }
+  const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+  if (activeSubMenuItem) {
+    activeSubMenuItem.classList.remove('is-active');
+  }
+  
+  // Änderung: Überprüfen, ob der angeklickte Link in einem Submenü enthalten ist
+  const isInSubMenu = el.closest('.submenu');
+  if (isInSubMenu) {
+    const parentMenuItem = isInSubMenu.previousElementSibling;
+    if (parentMenuItem) {
+      parentMenuItem.classList.add('is-active');
     }
+  }
+}
 
     function changeColorSub(el) {
       const activeMenuItem = document.querySelector('.menu-item.is-active');
