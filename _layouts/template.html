@@ -28,22 +28,33 @@
 
       <aside class="sidebar">
         <h3>Menu</h3>
-        <div class="container">
-          <nav class="menu">
-            <ul>
-              <li><a href="1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a></li>
-              <li><a href="2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a></li>
-              <li class="submenu">
-                <a href="#" onclick="toggleSubMenu(this)" class="menu-item">Service 1</a>
-                <ul class="sub-menu">
-                  <li><a href="hello" onclick="changeColor(this)" class="sub-menu-item">Service 1.1</a></li>
-                </ul>
-              </li>
-              <li><a href="3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a></li>
-              <li><a href="4" onclick="changeColor(this)" class="menu-item">Python Basics</a></li>
-              <li><a href="5" onclick="changeColor(this)" class="menu-item">Projects</a></li>
-            </ul>
-          </nav>
+        <div> 
+          <div class="container">
+            <nav class="menu">
+              <ul>
+                <li>
+                  <a href="1" onclick="changeColor(event, this)" class="menu-item is-active">Introduction</a>
+                </li>
+                <li>
+                  <a href="2" onclick="changeColor(event, this)" class="menu-item">Microcontroller Basics</a>
+                </li>
+                <li>
+                  <div class="submenu">
+                    <a href="hello" onclick="changeColor(event, this)" class="sub-menu-item">Service 1</a>
+                  </div>
+                </li>
+                <li>
+                  <a href="3" onclick="changeColor(event, this)" class="menu-item">Machine Learning Basics</a>
+                </li>
+                <li>
+                  <a href="4" onclick="changeColor(event, this)" class="menu-item">Python Basics</a>
+                </li>
+                <li>
+                  <a href="5" onclick="changeColor(event, this)" class="menu-item">Projects</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </aside>
 
@@ -62,16 +73,14 @@
       sidebar.classList.toggle('is-active');
     });
 
-    function changeColor(el) {
+    function changeColor(event, el) {
+      event.preventDefault();
+
       const activeMenuItem = document.querySelector('.menu-item.is-active');
       if (activeMenuItem) {
         activeMenuItem.classList.remove('is-active');
       }
       el.classList.add('is-active');
-    }
-
-    function toggleSubMenu(el) {
-      el.nextElementSibling.classList.toggle('sub-menu-active');
     }
   </script>
 </body>
