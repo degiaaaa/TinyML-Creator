@@ -28,24 +28,22 @@
 
       <aside class="sidebar">
         <h3>Menu</h3>
-        <div>
-          <div class="container">
-            <nav class="menu">
-              <ul>
-                <li><a href="#" onclick="navigateTo('1.md', this); changeColor(this)" class="menu-item is-active">Introduction</a></li>
-                <li><a href="#" onclick="navigateTo('2.md', this); changeColor(this)" class="menu-item">Microcontroller Basics</a></li>
-                <li>
-                  <div class="submenu">
-                    <a href="#" onclick="navigateTo('hello.md', this); changeColorSub(this)" class="sub-menu-item">Service 1</a>
-                  </div>
-                </li>
-                <li><a href="#" onclick="navigateTo('3.md', this); changeColor(this)" class="menu-item">Machine Learning Basics</a></li>
-                <li><a href="#" onclick="navigateTo('4.md', this); changeColor(this)" class="menu-item">Python Basics</a></li>
-                <li><a href="#" onclick="navigateTo('5.md', this); changeColor(this)" class="menu-item">Projects</a></li>
-              </ul>
-            </nav>
-          </div>
+        <div> 
+        <div class="container">
+          <nav class="menu">
+            <ul>
+            <a href="#1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a>
+            <a href="#2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a>
+            <div class="submenu">
+              <a href="#hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a>
+            </div>
+            <a href="#3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a>
+            <a href="#4" onclick="changeColor(this)" class="menu-item">Python Basics</a>
+            <a href="#5" onclick="changeColor(this)" class="menu-item">Projects</a>
+          </ul>
+          </nav>
         </div>
+      </div>
       </aside>
 
       <main class="main-content">
@@ -55,55 +53,49 @@
   </section>
 
   <script>
-    function navigateTo(url, element) {
-      // Remove the 'is-active' class from the currently active menu item
-      const activeMenuItem = document.querySelector('.menu-item.is-active');
-      if (activeMenuItem) {
-        activeMenuItem.classList.remove('is-active');
-      }
+    
+    const menu_toggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
 
-      // Add the 'is-active' class to the clicked menu item
-      element.classList.add('is-active');
-
-      // Perform the navigation by changing the 'src' attribute of the main content
-      const mainContent = document.querySelector('.main-content');
-      mainContent.src = url;
-    }
+    menu_toggle.addEventListener('click', () => {
+      menu_toggle.classList.toggle('is-active');
+      sidebar.classList.toggle('is-active');
+    });
 
     function changeColor(el) {
-      // Remove the 'is-active' class from the currently active menu item
       const activeMenuItem = document.querySelector('.menu-item.is-active');
       if (activeMenuItem) {
         activeMenuItem.classList.remove('is-active');
       }
-
-      // Add the 'is-active' class to the clicked menu item
       el.classList.add('is-active');
-    }
 
-    function changeColorSub(el) {
-      // Remove the 'is-active' class from the currently active menu item
-      const activeMenuItem = document.querySelector('.menu-item.is-active');
-      if (activeMenuItem) {
-        activeMenuItem.classList.remove('is-active');
-      }
-
-      // Remove the 'is-active' class from the currently active sub-menu item
       const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
       if (activeSubMenuItem) {
         activeSubMenuItem.classList.remove('is-active');
       }
+    }
 
-      // Add the 'is-active' class to the clicked sub-menu item
+    function changeColorSub(el) {
+      const activeMenuItem = document.querySelector('.menu-item.is-active');
+      if (activeMenuItem) {
+        activeMenuItem.classList.remove('is-active');
+      }
+      const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+      if (activeSubMenuItem) {
+        activeSubMenuItem.classList.remove('is-active');
+      }
       el.classList.add('is-active');
 
-      // Add the 'is-active' class to the parent menu item of the clicked sub-menu item
       const parentMenuItem = el.closest('.menu-item');
       if (parentMenuItem) {
         parentMenuItem.classList.add('is-active');
       }
     }
+  
+  
+
   </script>
+   
 </body>
 
 </html>
