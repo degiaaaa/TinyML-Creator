@@ -340,6 +340,8 @@ a {
   transition: 0.2s linear;
   margin-left: 1.5em;
 }
+
+/*
 .active {
   background-color: #85b5d9;
 }
@@ -373,6 +375,8 @@ a {
   border-right: 5px solid #85b5d9;
 
 }
+
+*/
 
 /*
 .sidebar h3 {
