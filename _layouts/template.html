@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -29,33 +32,21 @@
       <aside class="sidebar">
         <h3>Menu</h3>
         <div> 
-          <div class="container">
-            <nav class="menu">
-              <ul>
-                <li>
-                  <a href="1" onclick="changeColor(event, this)" class="menu-item is-active">Introduction</a>
-                </li>
-                <li>
-                  <a href="2" onclick="changeColor(event, this)" class="menu-item">Microcontroller Basics</a>
-                </li>
-                <li>
-                  <div class="submenu">
-                    <a href="hello" onclick="changeColor(event, this)" class="sub-menu-item">Service 1</a>
-                  </div>
-                </li>
-                <li>
-                  <a href="3" onclick="changeColor(event, this)" class="menu-item">Machine Learning Basics</a>
-                </li>
-                <li>
-                  <a href="4" onclick="changeColor(event, this)" class="menu-item">Python Basics</a>
-                </li>
-                <li>
-                  <a href="5" onclick="changeColor(event, this)" class="menu-item">Projects</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+        <div class="container">
+          <nav class="menu">
+            <ul>
+            <a href="1" onclick="changeColor(this)" class="menu-item is-active">Introduction</a>
+            <a href="2" onclick="changeColor(this)" class="menu-item">Microcontroller Basics</a>
+            <div class="submenu">
+              <a href="hello" onclick="changeColorSub(this)" class="sub-menu-item">Service 1</a>
+            </div>
+            <a href="3" onclick="changeColor(this)" class="menu-item">Machine Learning Basics</a>
+            <a href="4" onclick="changeColor(this)" class="menu-item">Python Basics</a>
+            <a href="5" onclick="changeColor(this)" class="menu-item">Projects</a>
+          </ul>
+          </nav>
         </div>
+      </div>
       </aside>
 
       <main class="main-content">
@@ -65,6 +56,7 @@
   </section>
 
   <script>
+    
     const menu_toggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
 
@@ -73,16 +65,64 @@
       sidebar.classList.toggle('is-active');
     });
 
-    function changeColor(event, el) {
-      event.preventDefault();
+    function changeColor(el) {
+  const activeMenuItem = document.querySelector('.menu-item.is-active');
+  if (activeMenuItem) {
+    activeMenuItem.classList.remove('is-active');
+  }
+  el.classList.add('is-active');
 
+  const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+  if (activeSubMenuItem) {
+    activeSubMenuItem.classList.remove('is-active');
+  }
+  
+  // Änderung: Überprüfen, ob der angeklickte Link in einem Submenü enthalten ist
+  const isInSubMenu = el.closest('.submenu');
+  if (isInSubMenu) {
+    const parentMenuItem = isInSubMenu.previousElementSibling;
+    if (parentMenuItem) {
+      parentMenuItem.classList.add('is-active');
+    }
+  }
+}
+
+    function changeColorSub(el) {
       const activeMenuItem = document.querySelector('.menu-item.is-active');
       if (activeMenuItem) {
         activeMenuItem.classList.remove('is-active');
       }
+      const activeSubMenuItem = document.querySelector('.sub-menu-item.is-active');
+      if (activeSubMenuItem) {
+        activeSubMenuItem.classList.remove('is-active');
+      }
       el.classList.add('is-active');
+
+      const parentMenuItem = el.closest('.menu-item');
+      if (parentMenuItem) {
+        parentMenuItem.classList.add('is-active');
+      }
     }
+
+    const menuLinks = document.querySelectorAll('.menu-item');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    changeColor(link);
+  });
+});
+
+const subMenuLinks = document.querySelectorAll('.sub-menu-item');
+subMenuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    changeColorSub(link);
+  });
+});
+
+  
+  
+
   </script>
+   
 </body>
 
 </html>
