@@ -94,6 +94,21 @@
         parentMenuItem.classList.add('is-active');
       }
     }
+    
+    const menuLinks = document.querySelectorAll('.menu-item');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    changeColor(link);
+  });
+});
+
+const subMenuLinks = document.querySelectorAll('.sub-menu-item');
+subMenuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    changeColorSub(link);
+  });
+});
+
   
   
 
