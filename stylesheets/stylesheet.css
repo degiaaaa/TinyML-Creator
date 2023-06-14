@@ -1,4 +1,6 @@
-
+/*Ich will dass die Navigation funktioniert trotz, change color von aktiven menu items. Also wenn ein item angeklickt wird, 
+  will ich dass die farbe des items an der sidebar sich ändert (geht hervorragend wenn ich # in href hab) dann geht aber die navigation nicht, 
+  ich will aber natürlich dass der markdown file angezeigt wird den ich auf der sidebar angeklickt habe. Es gibt keine fehlermeldungen. */
 * {
   box-sizing: border-box; }
 
