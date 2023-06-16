@@ -319,7 +319,7 @@ a {
   flex: 1 1 0;
   max-width: 300px;
   padding: 2rem 1rem;
-  background: linear-gradient(120deg, #2e3047,#85b5d9); /*to right, #3c3c5c, #4c5874*/
+  background: linear-gradient(to right, #3c3c5c, #4c5874);
 }
 
 .sidebar .menu {
