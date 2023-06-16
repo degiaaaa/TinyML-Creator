@@ -63,7 +63,7 @@ $$
     \hat{y} = \frac{1}{1 - p} \cdot y \cdot r
     $$
     
-   ![**Dense Neural Network.** https://www.researchgate.net/figure/Dense-Neural-Network_fig5_348402885](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a9a765b5-c918-4b65-b491-5da78648ddf1/Untitled.png)
+   ![**Dense Neural Network.** https://www.researchgate.net/figure/Dense-Neural-Network_fig5_348402885](https://www.researchgate.net/publication/348402885/figure/fig5/AS:978992135950348@1610421322839/Dense-Neural-Network_W640.jpg)
     
     **Dense Neural Network.** https://www.researchgate.net/figure/Dense-Neural-Network_fig5_348402885 
     
