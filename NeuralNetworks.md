@@ -1,7 +1,7 @@
 ---
 title: NeuralNetworks
 layout: template
-filename: NeuralNetworks.md
+filename: NeuralNetworks
 --- 
 
 # Neural Networks
