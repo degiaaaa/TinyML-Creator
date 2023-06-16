@@ -158,7 +158,7 @@ By following these steps, you can build, train, and predict with a neural networ
 
 In this subsection, we will explore dense neural networks and their application using the MNIST dataset. The MNIST dataset consists of 60,000 training images and 10,000 testing images, each representing handwritten digits from 0 to 9.
 
- ![Example of the MNIST database. https://www.mdpi.com/2076-3417/9/15/3169](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1495f6af-f45a-4db4-a357-9d67021a7af6/Untitled.png) 
+ ![Example of the MNIST database. https://www.mdpi.com/2076-3417/9/15/3169](https://www.mdpi.com/applsci/applsci-09-03169/article_deploy/html/images/applsci-09-03169-g001-550.jpg) 
 
 Example of the MNIST database. https://www.mdpi.com/2076-3417/9/15/3169
 
