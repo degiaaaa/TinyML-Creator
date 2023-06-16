@@ -39,21 +39,21 @@ Understanding these differences between DNNs and CNNs is essential for choosing 
 - The most commonly used activation functions in DNNs are:
     - ReLU (Rectified Linear Unit):
     
-    $$
-    f(x) = max(0, x)
-    $$
+$$
+f(x) = max(0, x)
+$$
     
     - Sigmoid:
     
-    $$
-    f(x) = 1 / (1 + e^{-x})
-    $$
+$$
+f(x) = 1 / (1 + e^{-x})
+$$
     
     - Tanh:
     
-    $$
-    f(x) = \frac{(e^{x}-e^{-x})}{(e^{x}-e^{-x})}
-    $$
+$$
+f(x) = \frac{(e^{x}-e^{-x})}{(e^{x}-e^{-x})}
+$$
     
 - The loss function in a DNN is typically the mean squared error (MSE) or the categorical cross-entropy.
 - The weights in a DNN are updated during training using the backpropagation algorithm, which calculates the gradient of the loss function with respect to the weights and adjusts them accordingly.
