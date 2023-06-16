@@ -4,7 +4,7 @@ layout: template
 filename: StartBasics
 --- 
 
-# Start with the basics
+# Start with the Basics
 Learn about the syntax and basic data types in Python such as variables, strings, numbers, and lists. Familiarize yourself with basic  operations and functions.
 
 ## Introduction to Python 
