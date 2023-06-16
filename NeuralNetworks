@@ -8,8 +8,6 @@ filename: NeuralNetworks
 
 Neural networks, a class of machine learning models inspired by the human brain, have gained significant popularity due to their ability to learn complex patterns and make accurate predictions. In this chapter, we will provide a step-by-step example of training and predicting with a neural network using an open-source dataset in Python with Keras, a popular deep learning library.
 
-We used the following sources https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/ and https://keras.io/guides/.
-
 ## 1. **Differences between Dense Neural Networks and CNNs**
 
 Dense Neural Networks (DNNs) and Convolutional Neural Networks (CNNs) are both widely used deep learning architectures, but they differ in their structure, input handling, and applications. Here, we explore the key differences between DNNs and CNNs:
