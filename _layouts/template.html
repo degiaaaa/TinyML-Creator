@@ -99,6 +99,16 @@
       })
     );
 
+    document.querySelectorAll(".menu-item").forEach((ele) =>
+      ele.addEventListener("click", function (event) {
+        event.preventDefault();
+        document
+          .querySelectorAll(".menu-item")
+          .forEach((ele) => ele.classList.remove("active"));
+        this.classList.add("active")
+      })
+    );
+
 
 
     function changeColor(el) {
