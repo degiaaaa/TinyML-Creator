@@ -355,7 +355,7 @@ a {
 }
 
 .sidebar .menu .menu-item.is-active {
-  background-color: #2e3047;
+  background:linear-gradient(to right, #3c3c5c, #4c5874);
 }
 
 .sidebar .menu .menu-item:hover {
@@ -370,7 +370,7 @@ a {
 }
 
 .sidebar .menu .menu-item.is-active .sub-menu-item.is-active {
-  background-color: #2e3047;
+  background:linear-gradient(to right, #3c3c5c, #4c5874);
 }
 
 .sidebar .menu .menu-item .sub-menu-item:hover {
