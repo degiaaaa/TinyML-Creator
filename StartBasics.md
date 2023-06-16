@@ -1,5 +1,5 @@
 ---
-title: Python Basics
+title: StartBasics
 layout: template
 filename: StartBasics
 --- 
