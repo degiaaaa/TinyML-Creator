@@ -5,9 +5,9 @@ filename: StartBasics
 
 --- 
 
-# 1. Start with the basics: Learn about the syntax and basic data types in Python such as variables, strings, numbers, and lists. Familiarize yourself with basic operations and functions.
+# 1. Start with the basics: \n Learn about the syntax and basic data types in Python such as variables, strings, numbers, and lists. Familiarize yourself with basic operations and functions.
 
-## 01 Introduction to Python: Learn about the history and use cases of Python. Discuss its popularity and why it's a great language to learn for beginners
+## Introduction to Python: \n Learn about the history and use cases of Python. Discuss its popularity and why it's a great language to learn for beginners
 
 ### Introduction
 
@@ -88,7 +88,7 @@ There are several tools for creating and managing Python environments, including
 
 Using conda allows you to create multiple isolated Python environments on your computer, each with its own version of Python and packages. This can help to ensure that you have the necessary packages for each project you are working on without affecting other projects.
 
-# 03 Python Syntax: Learn about the basic syntax of Python, including indentation, comments, and basic control structures such as if-else statements and loops.
+# Python Syntax: Learn about the basic syntax of Python, including indentation, comments, and basic control structures such as if-else statements and loops.
 
 # Python Syntax Tutorial
 
