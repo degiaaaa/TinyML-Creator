@@ -89,21 +89,12 @@
       sidebar.classList.toggle('is-active');
     });
 
-    document.querySelectorAll(".sub-menu-item").forEach((ele) =>
-      ele.addEventListener("click", function (event) {
-        event.preventDefault();
-        document
-          .querySelectorAll(".sub-menu-item")
-          .forEach((ele) => ele.classList.remove("active"));
-        this.classList.add("active")
-      })
-    );
 
-    document.querySelectorAll(".menu-item").forEach((ele) =>
+    document.querySelectorAll(".menu-item, .sub-menu-item").forEach((ele) =>
       ele.addEventListener("click", function (event) {
         event.preventDefault();
         document
-          .querySelectorAll(".menu-item")
+          .querySelectorAll(".menu-item, .sub-menu-item")
           .forEach((ele) => ele.classList.remove("active"));
         this.classList.add("active")
       })
