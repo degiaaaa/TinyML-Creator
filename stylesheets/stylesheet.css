@@ -427,10 +427,6 @@ a {
     min-width: 200px;
 		transition: 0.2s linear;
 	}
-  
-  .sidebar.is-active {
-		left: 0;
-    color:  #85b5d9;
-}
+
 
 }
