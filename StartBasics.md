@@ -15,7 +15,7 @@ filename: StartBasics
 
 Python is an incredibly popular and versatile programming language, created in 1991 and used by developers all over the world. It is an easy-to-learn language with a simple, flexible and readable syntax \[1\]. This makes python a great choice for developers of all levels, from beginners to experienced developers. Python is often used for web development, data analysis, artificial intelligence, and more. It allows developers to tackle a range of challenges. Additionally, Python's open source nature has resulted in an active community of developers and users who are finding new ways to use the language every day. Data scientists, in particular, are often attracted to Python due to its powerful capabilities in the fields of data science and machine learning. Furthermore, Python is a powerful language that can be used for a variety of tasks.
 
-### ** Popularity and Why it's a Great Language to Learn for Beginners**
+### **Popularity and Why it's a Great Language to Learn for Beginners**
 
 Python is a great language for beginners to learn due to its ease of use and its active and supportive community. The open source nature of Python means that anyone can contribute to the language and make it better.
 
