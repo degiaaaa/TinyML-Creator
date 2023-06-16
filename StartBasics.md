@@ -5,11 +5,9 @@ filename: StartBasics
 
 --- 
 
-# **Start with the basics**  
-# Learn about the syntax and basic data types in Python such as variables, strings, numbers, and lists. Familiarize yourself with basic  operations and functions.
+# **Start with the basics** Learn about the syntax and basic data types in Python such as variables, strings, numbers, and lists. Familiarize yourself with basic  operations and functions.
 
-## **Introduction to Python** 
-## Learn about the history and use cases of Python. Discuss its popularity and why it's a great language to learn for beginners
+## **Introduction to Python** Learn about the history and use cases of Python. Discuss its popularity and why it's a great language to learn for beginners
 
 ### **Introduction**
 
