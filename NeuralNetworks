@@ -1,0 +1,454 @@
+---
+title: Neural Networks
+layout: template
+filename: NeuralNetworks
+--- 
+
+# Neural Networks
+
+Neural networks, a class of machine learning models inspired by the human brain, have gained significant popularity due to their ability to learn complex patterns and make accurate predictions. In this chapter, we will provide a step-by-step example of training and predicting with a neural network using an open-source dataset in Python with Keras, a popular deep learning library.
+
+We used the following sources https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/ and https://keras.io/guides/.
+
+## 1. **Differences between Dense Neural Networks and CNNs**
+
+Dense Neural Networks (DNNs) and Convolutional Neural Networks (CNNs) are both widely used deep learning architectures, but they differ in their structure, input handling, and applications. Here, we explore the key differences between DNNs and CNNs:
+
+1. Input Structure:
+    - DNNs: DNNs process inputs as flattened feature vectors, where each feature is represented as a single value. They do not preserve any spatial information or take advantage of the input's structure.
+    - CNNs: CNNs handle inputs as multi-dimensional arrays (e.g., images) and preserve their spatial structure. CNNs exploit the local connectivity and hierarchical patterns present in the input data.
+2. Architecture:
+    - DNNs: DNNs consist of multiple layers of densely connected nodes (neurons). Each node in a layer is connected to every node in the previous and subsequent layers, forming a fully connected structure.
+    - CNNs: CNNs consist of convolutional layers followed by pooling layers, and optionally fully connected layers at the end. Convolutional layers extract local patterns through convolution operations, while pooling layers downsample the spatial dimensions. This architecture allows CNNs to learn hierarchical features.
+3. Parameter Sharing:
+    - DNNs: In DNNs, each weight parameter is learned independently for each connection in the network. The parameters are not shared across different regions of the input.
+    - CNNs: CNNs utilize parameter sharing through the use of convolutional filters. The same set of weights (filter) is applied across different regions of the input, enabling the detection of similar features in different parts of the input.
+4. Translation Invariance:
+    - DNNs: DNNs are not inherently translation invariant. They treat different spatial locations in the input independently, which can lead to variations in performance when the input is shifted.
+    - CNNs: CNNs exhibit translation invariance due to the shared weights in convolutional layers. This property allows CNNs to recognize patterns and objects regardless of their specific location in the input.
+5. Memory Requirements:
+    - DNNs: DNNs typically require a large number of parameters, especially in networks with many layers or neurons. This can result in higher memory requirements.
+    - CNNs: CNNs have fewer parameters compared to fully connected networks because of weight sharing in convolutional layers. This makes CNNs more memory-efficient, especially when processing large input data, such as images.
+6. Application Areas:
+    - DNNs: DNNs are well-suited for tasks where the input data does not have a specific spatial structure, such as text classification, speech recognition, and sentiment analysis.
+    - CNNs: CNNs excel at tasks that involve grid-like data, such as image classification, object detection, image segmentation, and video analysis, where capturing local patterns and spatial relationships is crucial.
+
+Understanding these differences between DNNs and CNNs is essential for choosing the appropriate architecture for specific tasks and working with different types of data.
+
+## 2. Dense Neural Networks
+
+- The output of a neuron in a DNN is calculated using the following formula: y = f(wx + b), where y is the output, f is the activation function, w is the weight vector, x is the input vector, and b is the bias vector.
+- The most commonly used activation functions in DNNs are:
+    - ReLU (Rectified Linear Unit):
+    
+    $$
+    f(x) = max(0, x)
+    $$
+    
+    - Sigmoid:
+    
+    $$
+    f(x) = 1 / (1 + e^{-x})
+    $$
+    
+    - Tanh:
+    
+    $$
+    f(x) = \frac{(e^{x}-e^{-x})}{(e^{x}-e^{-x})}
+    $$
+    
+- The loss function in a DNN is typically the mean squared error (MSE) or the categorical cross-entropy.
+- The weights in a DNN are updated during training using the backpropagation algorithm, which calculates the gradient of the loss function with respect to the weights and adjusts them accordingly.
+- A common regularization technique for DNNs is dropout, which randomly drops out (sets to zero) some of the neurons during training to prevent overfitting
+    
+    $$
+    \hat{y} = \frac{1}{1 - p} \cdot y \cdot r
+    $$
+    
+    ![**Dense Neural Network.** https://www.researchgate.net/figure/Dense-Neural-Network_fig5_348402885](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a9a765b5-c918-4b65-b491-5da78648ddf1/Untitled.png)
+    
+    **Dense Neural Network.** https://www.researchgate.net/figure/Dense-Neural-Network_fig5_348402885
+    
+
+### Step 1: Import Required Libraries
+
+Let's begin by importing the necessary libraries, including Keras and its dependencies:
+
+```python
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense
+
+```
+
+### Step 2: Load and Preprocess the Dataset
+
+We will use the "Pima Indians Diabetes" dataset (https://www.kaggle.com/datasets/kumargh/pimaindiansdiabetescsv?resource=download), which is freely available and relatively small. This dataset consists of medical details about female patients and aims to predict whether a patient has diabetes or not. It contains eight input features and one output (target) variable.
+
+```python
+# Load the dataset
+dataset = np.loadtxt("pima-indians-diabetes.csv", delimiter=",")
+
+# Split the dataset into input features (X) and the target variable (y)
+X = dataset[:, 0:8]
+y = dataset[:, 8]
+
+# Normalize the input features to have a mean of 0 and standard deviation of 1
+X = (X - np.mean(X)) / np.std(X)
+```
+
+### Step 3: Define the Neural Network Model
+
+We will create a simple neural network model with three layers: an input layer, a hidden layer, and an output layer. Each layer will consist of densely connected neurons.
+
+```python
+# Initialize the neural network model
+model = Sequential()
+
+# Add the input layer (8 input features) and the hidden layer (12 neurons)
+model.add(Dense(12, input_dim=8, activation='relu'))
+
+# Add the output layer (1 neuron)
+model.add(Dense(1, activation='sigmoid'))
+```
+
+### Step 4: Compile the Model
+
+Before training the neural network, we need to compile it by specifying the loss function, optimizer, and evaluation metric.
+
+```python
+# Compile the model
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+```
+
+### Step 5: Train the Model
+
+To train the neural network, we will use the `fit()` function, which performs the forward and backward propagation to adjust the model's weights.
+
+```python
+# Train the model on the dataset
+model.fit(X, y, epochs=150, batch_size=10)
+```
+
+### Step 6: Evaluate the Model
+
+Once the model is trained, we can evaluate its performance on unseen data. We will use the same dataset to keep the example simple, but in practice, it is essential to use separate datasets for training and evaluation.
+
+```python
+# Evaluate the model on the dataset
+_, accuracy = model.evaluate(X, y)
+print("Accuracy: %.2f%%" % (accuracy * 100))
+```
+
+### Step 7: Make Predictions
+
+Finally, we can use the trained model to make predictions on new data. Here, we will use the first three instances from the dataset for demonstration purposes.
+
+```python
+# Make predictions on new data
+predictions = model.predict(X[0:3])
+
+# Convert predictions to binary values (0 or 1)
+rounded_predictions = [int(np.round(p)) for p in predictions]
+
+print("Predictions:", rounded_predictions)
+```
+
+By following these steps, you can build, train, and predict with a neural network using Keras in Python. Remember to adapt the code and the dataset to your specific problem and data. Neural networks offer vast possibilities for various applications, and this example provides a foundation to explore further.
+
+## 2.1 Dense Neural Networks with MNIST Example
+
+In this subsection, we will explore dense neural networks and their application using the MNIST dataset. The MNIST dataset consists of 60,000 training images and 10,000 testing images, each representing handwritten digits from 0 to 9.
+
+![Example of the MNIST database. https://www.mdpi.com/2076-3417/9/15/3169](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1495f6af-f45a-4db4-a357-9d67021a7af6/Untitled.png)
+
+Example of the MNIST database. https://www.mdpi.com/2076-3417/9/15/3169
+
+### Step 1: Import Required Libraries
+
+Let's begin by importing the necessary libraries, including Keras and its dependencies:
+
+```python
+import numpy as np
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.utils import to_categorical
+
+```
+
+### Step 2: Load and Preprocess the Dataset
+
+We will load the MNIST dataset, which is readily available in Keras:
+
+```python
+# Load the MNIST dataset
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+# Preprocess the data
+# Flatten the images (28x28) into a 1D array (784)
+num_pixels = X_train.shape[1] * X_train.shape[2]
+X_train = X_train.reshape(X_train.shape[0], num_pixels).astype('float32')
+X_test = X_test.reshape(X_test.shape[0], num_pixels).astype('float32')
+
+# Normalize the pixel values to the range of 0 and 1
+X_train = X_train / 255
+X_test = X_test / 255
+
+# One-hot encode the target labels
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
+```
+
+### Step 3: Define the Neural Network Model
+
+We will create a dense neural network model with two hidden layers and an output layer. Each layer will consist of densely connected neurons.
+
+```python
+# Initialize the neural network model
+model = Sequential()
+
+# Add the first hidden layer with 784 input neurons and 128 output neurons
+model.add(Dense(128, input_dim=num_pixels, activation='relu'))
+
+# Add the second hidden layer with 128 input neurons and 64 output neurons
+model.add(Dense(64, activation='relu'))
+
+# Add the output layer with 10 output neurons (for 10 classes)
+model.add(Dense(10, activation='softmax'))
+```
+
+### Step 4: Compile and Train the Model
+
+Before training the neural network, we need to compile it by specifying the loss function, optimizer, and evaluation metric. Then, we can train the model using the training data.
+
+```python
+# Compile the model
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+# Train the model on the training data
+model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=128)
+```
+
+### Step 5: Evaluate the Model
+
+Once the model is trained, we can evaluate its performance on the testing data.
+
+```python
+# Evaluate the model on the testing data
+_, accuracy = model.evaluate(X_test, y_test)
+print("Accuracy: %.2f%%" % (accuracy * 100))
+```
+
+### Step 6: Make Predictions
+
+Finally, we can use the trained model to make predictions on new data. Here, we will use the first three instances from the testing data for demonstration purposes.
+
+```python
+# Make predictions on the testing data
+predictions = model.predict(X_test[:3])
+predicted_labels = np.argmax(predictions, axis=1)
+
+print("Predicted Labels:", predicted_labels)
+```
+
+By following these steps, you can build, train, and predict with a dense neural network using the MNIST dataset in Keras. Dense neural networks are versatile and widely used for various tasks, but they may struggle with capturing spatial dependencies in
+
+## 2.1.1 Tasks for Dense Neural Networks with MNIST Example
+
+**Tasks we solved together:**
+
+1. Import Required Libraries
+2. Load and Preprocess the Dataset
+    - Load the MNIST dataset
+    - Reshape the data to a 1D array
+    - Normalize the pixel values
+    - One-hot encode the target labels
+3. Define the Neural Network Model
+    - Initialize a sequential model
+    - Add a dense hidden layer with ReLU activation
+    - Add another dense hidden layer with ReLU activation
+    - Add an output layer with softmax activation
+4. Compile and Train the Model
+    - Compile the model with categorical cross-entropy loss and Adam optimizer
+    - Train the model using the training data
+5. Evaluate the Model
+    - Evaluate the model's accuracy on the testing data
+6. Make Predictions
+    - Make predictions on new data using the trained model
+    
+    **Tasks for you:**
+    
+7. Experiment with Different Activation Functions:
+    - Try different activation functions (e.g., sigmoid, tanh) and observe their impact on the model's performance.
+8. Adjust the Number of Hidden Layers and Neurons:
+    - Modify the number of hidden layers and neurons in each layer to explore the effect on the model's capacity and performance.
+9. Implement Dropout Regularization:
+    - Add dropout layers to the model to reduce overfitting and improve generalization.
+10. Save and Load the Model:
+    - Save the trained model to disk and load it for future use or deployment.
+
+## 3. Convolutional Neural Networks (CNNs)
+
+We will explore Convolutional Neural Networks (CNNs) and their application using the MNIST dataset. CNNs are specifically designed to effectively process grid-like data such as images, making them ideal for image classification tasks.
+
+![Basic CNN architecture with two convolution and subsampling steps integrated into a classifier https://www.kernix.com/article/a-toy-convolutional-neural-network-for-image-classification-with-keras/ (Scheme: [M. Peemen et al. (2011)](http://parse.ele.tue.nl/system/attachments/11/original/paperspeedsigncnn.pdf?1305713044))](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3165b00c-d7c8-4b4f-bd69-a28c18f9a225/Untitled.png)
+
+Basic CNN architecture with two convolution and subsampling steps integrated into a classifier https://www.kernix.com/article/a-toy-convolutional-neural-network-for-image-classification-with-keras/ (Scheme: [M. Peemen et al. (2011)](http://parse.ele.tue.nl/system/attachments/11/original/paperspeedsigncnn.pdf?1305713044))
+
+- The main building blocks of a CNN are convolutional layers, which apply a set of filters (kernels) to the input image to extract features.
+- The output of a convolutional layer is calculated using the following formula:
+    
+    $$
+    y(i,j) = f(∑(m,n) xm,n * w(i-m,j-n) + b)
+    $$
+    
+    y(i,j) is the output at position (i,j), f is the activation function, xm,n is the input at position (m,n), w(i-m,j-n) is the weight at position (i-m,j-n), and b is the bias.
+    
+- The most commonly used activation functions in CNNs are ReLU and its variants, such as leaky ReLU (See subsection 2. Dense Neural Networks) and ELU:
+
+$$
+   f(x) = \begin{cases} x & \text{if } x > 0 \\
+    \alpha \cdot (e^x - 1) & \text{if } x \leq 0
+\end{cases}
+$$
+
+- The output of a convolutional layer is typically followed by a pooling layer, which downsamples the feature map by taking the maximum or average of a neighborhood of pixels.
+- The final layers of a CNN are typically fully connected layers, which take the flattened output of the last convolutional/pooling layer and produce the final output (e.g., class probabilities).
+- A common regularization technique for CNNs is weight decay, which adds a penalty term to the loss function to encourage smaller weights.
+
+### Step 1: Import Required Libraries
+
+Let's begin by importing the necessary libraries, including Keras and its dependencies:
+
+```python
+import numpy as np
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from keras.utils import to_categorical
+```
+
+### Step 2: Load and Preprocess the Dataset
+
+We will load the MNIST dataset, similar to the previous subchapter, but this time we will reshape the data to match the input shape of the CNN model:
+
+```python
+# Load the MNIST dataset
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+# Preprocess the data
+# Reshape the data to have a single channel (grayscale)
+X_train = X_train.reshape(X_train.shape[0], 28, 28, 1).astype('float32')
+X_test = X_test.reshape(X_test.shape[0], 28, 28, 1).astype('float32')
+
+# Normalize the pixel values to the range of 0 and 1
+X_train = X_train / 255
+X_test = X_test / 255
+
+# One-hot encode the target labels
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
+```
+
+### Step 3: Define the CNN Model
+
+We will create a CNN model with convolutional layers, pooling layers, and fully connected layers. This architecture is commonly used for image classification tasks.
+
+```python
+# Initialize the CNN model
+model = Sequential()
+
+# Add the first convolutional layer with 32 filters, a 3x3 kernel, and ReLU activation
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+
+# Add a max pooling layer with 2x2 pool size
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+# Add a second convolutional layer with 64 filters, a 3x3 kernel, and ReLU activation
+model.add(Conv2D(64, (3, 3), activation='relu'))
+
+# Add another max pooling layer
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+# Flatten the feature maps to a 1D array
+model.add(Flatten())
+
+# Add a fully connected layer with 128 neurons and ReLU activation
+model.add(Dense(128, activation='relu'))
+
+# Add the output layer with 10 neurons (for 10 classes) and softmax activation
+model.add(Dense(10, activation='softmax'))
+
+```
+
+**We use a Max Pooling layer, which has 2x2 Size:**
+
+![Max Pooling https://paperswithcode.com/method/max-pooling](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f0ed6503-3cf1-425f-adf7-1b50c4f858b6/Untitled.png)
+
+Max Pooling https://paperswithcode.com/method/max-pooling
+
+### Step 4: Compile and Train the Model
+
+Similar to the previous subchapter, we need to compile the model by specifying the loss function, optimizer, and evaluation metric. Then, we can train the model using the training data.
+
+```python
+# Compile the model
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+# Train the model on the training data
+model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=128)
+```
+
+### Step 5: Evaluate the Model
+
+Once the model is trained, we can evaluate its performance on the testing data.
+
+```python
+# Evaluate the model on the testing data
+_, accuracy = model.evaluate(X_test, y_test)
+print("Accuracy: %.2f%%" % (accuracy * 100))
+```
+
+## 3.1. Tasks for Convolutional Neural Networks (CNNs)
+
+**Tasks we solved together:**
+
+1. Import Required Libraries
+2. Load and Preprocess the Dataset
+    - Load the MNIST dataset
+    - Reshape the data to match the CNN input shape
+    - Normalize the pixel values
+    - One-hot encode the target labels
+3. Define the CNN Model
+    - Initialize a sequential model
+    - Add convolutional layers with different filter sizes and activations
+    - Add pooling layers for downsampling
+    - Add fully connected layers for classification
+4. Compile and Train the Model
+    - Compile the model with categorical cross-entropy loss and Adam optimizer
+    - Train the model using the training data
+5. Evaluate the Model
+    - Evaluate the model's accuracy on the testing data
+6. Make Predictions
+    - Make predictions on new data using the trained model
+    
+    **Tasks for you:**
+    
+7. Experiment with Different Convolutional Layer Configurations:
+    - Adjust the number of filters, kernel sizes, and activation functions in the convolutional layers to see their impact on the model's performance.
+8. Add Regularization Techniques:
+    - use “from keras.layers import BatchNormalization”
+    - Implement techniques like dropout or batch normalization to improve the model's generalization and robustness.
+9. Visualize Convolutional Filters:
+    - use “import matplotlib.pyplot as plt”
+    - Visualize the learned convolutional filters to understand what features the network is detecting.
+10. Fine-tuning and Transfer Learning:
+    - from keras.applications import VGG16
+    - Explore using pre-trained CNN models (e.g., VGG, ResNet) and fine-tuning them on the MNIST dataset.
+    
+
+Sources for images and formulas:
+
+- DNN formulas: **https://towardsdatascience.com/a-gentle-introduction-to-neural-networks-series-part-1-2b90b87795bc**
+- CNN formulas: **https://towardsdatascience.com/a-basic-introduction-to-separable-convolutions-b99ec3102728**
